@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "description": "v1 수동 모드 에이전트-스킬 매핑",
+  "agents": {
+    "v1-planning-agent": {
+      "skills": ["planning", "visual-new"],
+      "model": "opus",
+      "tools": ["Read", "Write", "WebSearch"]
+    },
+    "v1-planning-verifier": {
+      "skills": ["planning", "verification"],
+      "model": "haiku",
+      "tools": ["Read", "Write"]
+    },
+    "v1-code-agent": {
+      "skills": ["code-python", "code-project-structure", "code-workflow", "visual-new"],
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash"]
+    },
+    "v1-code-verifier": {
+      "skills": ["code-python", "code-workflow", "verification"],
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash"]
+    },
+    "v1-toc-agent": {
+      "skills": ["writing", "planning"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-toc-verifier": {
+      "skills": ["writing", "planning", "verification"],
+      "model": "haiku",
+      "tools": ["Read", "Write"]
+    },
+    "v1-writing-agent": {
+      "skills": ["writing", "visual-new", "code-workflow"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-writing-verifier": {
+      "skills": ["writing", "visual-new", "code-workflow", "verification"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-retrospective": {
+      "skills": [],
+      "model": "opus",
+      "tools": ["Read", "Write"],
+      "note": "전체 산출물을 직접 참조"
+    }
+  }
+}

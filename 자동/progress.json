@@ -1,0 +1,17 @@
+{
+  "book_title": "",
+  "mode": "auto",
+  "status": "not_started",
+  "created_at": "",
+  "updated_at": "",
+  "phases": {
+    "phase_0_outline": { "status": "pending", "started_at": "", "completed_at": "" },
+    "phase_1_planning": { "status": "pending", "started_at": "", "completed_at": "", "verification": "" },
+    "phase_2_code": { "status": "pending", "started_at": "", "completed_at": "", "verification": "" },
+    "phase_3_toc": { "status": "pending", "started_at": "", "completed_at": "", "verification": "" },
+    "phase_4_writing": { "status": "pending", "started_at": "", "completed_at": "", "verification": "" },
+    "phase_5_merge": { "status": "pending", "started_at": "", "completed_at": "" },
+    "phase_6_done": { "status": "pending", "completed_at": "" }
+  },
+  "chapters": []
+}

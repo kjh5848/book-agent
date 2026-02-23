@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "사내 문서 메타데이터 스키마",
+  "type": "object",
+  "required": ["doc_id", "source_file", "department", "created_date", "version", "doc_type"],
+  "properties": {
+    "doc_id": {
+      "type": "string",
+      "description": "문서 고유 ID (UUID 형식)",
+      "example": "doc-2024-hr-001"
+    },
+    "source_file": {
+      "type": "string",
+      "description": "원본 파일명 (경로 포함)",
+      "example": "hr/연차규정_v2.1.pdf"
+    },
+    "department": {
+      "type": "string",
+      "enum": ["HR", "기획", "마케팅", "개발", "재무", "전사"],
+      "description": "문서 소유 부서"
+    },
+    "created_date": {
+      "type": "string",
+      "format": "date",
+      "description": "문서 작성일 (YYYY-MM-DD)",
+      "example": "2024-01-15"
+    },
+    "version": {
+      "type": "string",
+      "description": "문서 버전",
+      "example": "v2.1"
+    },
+    "doc_type": {
+      "type": "string",
+      "enum": ["규정", "가이드", "보고서", "공지", "매뉴얼"],
+      "description": "문서 유형"
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "검색 태그 (선택)",
+      "example": ["연차", "휴가", "인사"]
+    },
+    "page_count": {
+      "type": "integer",
+      "description": "총 페이지 수"
+    }
+  }
+}
