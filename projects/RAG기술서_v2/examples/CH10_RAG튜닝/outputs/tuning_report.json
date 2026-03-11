@@ -1,0 +1,114 @@
+{
+  "title": "RAG 시스템 튜닝 최종 리포트",
+  "story": "이서연의 RAG 튜닝 여정: 72% → 목표 달성",
+  "baseline": {
+    "score": 0.0,
+    "avg_precision": 0.0,
+    "avg_recall": 0.0
+  },
+  "optimizations": {
+    "chunk_tuning": {
+      "applied": true,
+      "best_params": {
+        "chunk_size": 300,
+        "overlap": 0,
+        "k": 1
+      },
+      "improvement": 0.05
+    },
+    "reranking": {
+      "applied": true,
+      "mode": "cross_encoder",
+      "improvement": 0.03
+    },
+    "hybrid_search": {
+      "applied": true,
+      "mode": "active",
+      "improvement": 0.04
+    }
+  },
+  "estimated_final_score": 0.12,
+  "total_improvement": 0.12,
+  "k_tuning_results": [
+    {
+      "k": 1,
+      "avg_precision": 0.0,
+      "avg_recall": 0.0,
+      "f1_score": 0.0
+    },
+    {
+      "k": 3,
+      "avg_precision": 0.0,
+      "avg_recall": 0.0,
+      "f1_score": 0.0
+    },
+    {
+      "k": 5,
+      "avg_precision": 0.0,
+      "avg_recall": 0.0,
+      "f1_score": 0.0
+    },
+    {
+      "k": 7,
+      "avg_precision": 0.0,
+      "avg_recall": 0.0,
+      "f1_score": 0.0
+    }
+  ],
+  "chunk_tuning_results": [
+    {
+      "chunk_size": 300,
+      "overlap": 0,
+      "avg_recall": 0.0,
+      "label": "chunk300_overlap0"
+    },
+    {
+      "chunk_size": 300,
+      "overlap": 50,
+      "avg_recall": 0.0,
+      "label": "chunk300_overlap50"
+    },
+    {
+      "chunk_size": 300,
+      "overlap": 100,
+      "avg_recall": 0.0,
+      "label": "chunk300_overlap100"
+    },
+    {
+      "chunk_size": 500,
+      "overlap": 0,
+      "avg_recall": 0.0,
+      "label": "chunk500_overlap0"
+    },
+    {
+      "chunk_size": 500,
+      "overlap": 50,
+      "avg_recall": 0.0,
+      "label": "chunk500_overlap50"
+    },
+    {
+      "chunk_size": 500,
+      "overlap": 100,
+      "avg_recall": 0.0,
+      "label": "chunk500_overlap100"
+    },
+    {
+      "chunk_size": 800,
+      "overlap": 0,
+      "avg_recall": 0.0,
+      "label": "chunk800_overlap0"
+    },
+    {
+      "chunk_size": 800,
+      "overlap": 50,
+      "avg_recall": 0.0,
+      "label": "chunk800_overlap50"
+    },
+    {
+      "chunk_size": 800,
+      "overlap": 100,
+      "avg_recall": 0.0,
+      "label": "chunk800_overlap100"
+    }
+  ]
+}

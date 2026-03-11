@@ -1,30 +1,40 @@
-# Python 네이밍 규칙
+# Python Naming Conventions
 
-## 네이밍 테이블
+## Naming Table
+<!-- Python 네이밍 규칙 표 -->
 
-| 대상 | 규칙 | 예시 |
-|------|------|------|
-| 변수 / 함수 | `snake_case` | `load_documents`, `chunk_size` |
-| 클래스 | `PascalCase` | `DocumentLoader`, `VectorStore` |
-| 상수 | `UPPER_SNAKE_CASE` | `MAX_TOKENS`, `DEFAULT_MODEL` |
-| 파일명 | `snake_case.py` | `pdf_loader.py`, `vector_store.py` |
+| Target | Rule | Example |
+|--------|------|---------|
+| Variable / Function | `snake_case` | `load_documents`, `chunk_size` |
+| Class | `PascalCase` | `DocumentLoader`, `VectorStore` |
+| Constant | `UPPER_SNAKE_CASE` | `MAX_TOKENS`, `DEFAULT_MODEL` |
+| File Name | `snake_case.py` | `pdf_loader.py`, `vector_store.py` |
 
-## 주석 규칙
+## Comment Rules
+<!-- 코드 주석 작성 규칙 -->
 
-- **인라인 주석**: 복잡한 로직에만 사용합니다. 자명한 코드에는 달지 않습니다.
-- **섹션 구분**: 긴 코드는 `# --- 섹션명 ---` 형식으로 구분합니다.
+- **Inline comments**: Use only for complex logic. Do not add to self-explanatory code.
+- **Section separators**: Use `# --- Section Name ---` format for long code files.
 
 ```python
-# --- PDF 텍스트 추출 ---
+# --- PDF Text Extraction ---
 raw_text = extract_text(pdf_path)
 
-# --- AI 정제 ---
-# 줄바꿈/특수문자가 섞인 원본을 정리된 문단으로 변환
+# --- AI Refinement ---
+# Convert raw text with mixed line breaks/special characters into clean paragraphs
 cleaned_text = refine_with_llm(raw_text)
 ```
 
-## 코드 전체 제공 원칙
+## Docker Command Convention
+<!-- Docker 명령어 표기 규칙 -->
 
-- 코드를 설명할 때는 **생략 없이 전체 코드** 를 보여줍니다.
-- `...` 이나 `# 생략` 으로 축약하지 않습니다.
-- 독자가 복사/붙여넣기로 바로 실행할 수 있어야 합니다.
+- **`docker compose`** (V2, 하이픈 없음)를 표준으로 사용한다.
+- `docker-compose` (V1, 하이픈 포함)는 사용하지 않는다.
+- 모든 챕터에서 `docker compose up -d`, `docker compose down` 형태로 통일한다.
+
+## Full Code Provision Principle
+<!-- 생략 없이 전체 코드를 제공하는 원칙 -->
+
+- When explaining code, show the **complete code without omissions**.
+- Do not abbreviate with `...` or `# omitted`.
+- Readers must be able to copy and run the code immediately.

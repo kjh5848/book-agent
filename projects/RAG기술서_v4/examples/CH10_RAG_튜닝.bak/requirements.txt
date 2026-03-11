@@ -1,0 +1,54 @@
+# ====================================================
+# CH10 RAG 튜닝 - 의존성 패키지
+# pip install -r requirements.txt
+# ====================================================
+
+# --- 핵심 프레임워크 ---
+langchain==0.3.14
+langchain-core==0.3.63
+langchain-community==0.3.14
+
+# --- 텍스트 분할 (청킹 실험용) ---
+langchain-text-splitters==0.3.8
+
+# --- 시맨틱 청킹 (선택 — 실험 3에서 사용, 없으면 재귀 청킹으로 대체) ---
+langchain-experimental==0.3.4
+
+# --- LLM 연동 ---
+langchain-ollama==0.2.2
+langchain-openai==0.2.12
+
+# --- 임베딩 및 벡터 DB ---
+chromadb==1.5.1
+sentence-transformers==3.4.1
+
+# --- 문서 파싱 ---
+pypdf==5.1.0
+python-docx==1.1.2
+
+# --- BM25 (Hybrid Search) ---
+rank-bm25==0.2.2
+
+# --- 환경 변수 관리 ---
+python-dotenv==1.0.1
+
+# --- 리랭커 (Cross-Encoder) ---
+# sentence-transformers 에 포함되어 있음
+
+# --- OCR ---
+easyocr==1.7.2
+
+# --- 데이터 처리 ---
+numpy==1.26.4
+pandas==2.2.3
+
+# --- 출력 형식 ---
+tabulate==0.9.0
+rich==13.9.4
+
+# --- 타입 힌트 지원 ---
+typing-extensions==4.12.2
+
+# --- RAGAS 평가 프레임워크 (선택, USE_RAGAS=true 시 필요) ---
+# ragas==0.2.8
+# datasets==3.2.0

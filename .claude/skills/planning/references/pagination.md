@@ -1,48 +1,54 @@
-# 분량 관리 규칙
+# Page Volume Management Rules
 
-## 1. 절대 제약
+## 1. Absolute Constraints
+<!-- 절대 불가침 제약 조건 -->
 
-- **총 페이지**: 100페이지 이하 (절대 불가침)
-- **단일 챕터**: 20페이지 이하
-- **목표 초과 절대 불가**
+- **Total pages**: 100 pages or fewer (absolutely non-negotiable)
+- **Single chapter**: 20 pages or fewer
+- **Exceeding the target is strictly prohibited**
 
-## 2. 페이지 배분 매트릭스
+## 2. Page Allocation Matrix
+<!-- 파트·챕터별 페이지 배분 매트릭스 -->
 
 ```text
-[Part 1. 기본기] CH01 (Xp) / CH02 (Xp)
-[Part 2. 실습]  CH03 (Xp) / CH04 (Xp)
-[부록]          에러 가이드 (Xp)
-합계: 100p 이하
+[Part 1. Fundamentals] CH01 (Xp) / CH02 (Xp)
+[Part 2. Hands-on]     CH03 (Xp) / CH04 (Xp)
+[Appendix]             Error Guide (Xp)
+Total: 100p or fewer
 ```
 
-## 3. 챕터 내 구성 비율
+## 3. In-Chapter Composition Ratio
+<!-- 챕터 내 구성 요소별 비율 기준 -->
 
-각 챕터 내에서 아래 비율을 참고합니다:
+Use the following ratios as a reference within each chapter:
 
-| 구성 요소 | 비율 | 예시 (10p 챕터) |
-|----------|------|----------------|
-| 도입 | 10% | 1p |
-| 개념 설명 | 20% | 2p |
-| 코드 실습 | 50% | 5p |
-| 심화/에러대응 | 10% | 1p |
-| 정리하며 | 10% | 1p |
+| Component | Ratio | Example (10p chapter) |
+|-----------|-------|-----------------------|
+| Introduction | 10% | 1p |
+| Concept Explanation | 20% | 2p |
+| Hands-on Practice | 50% | 5p |
+| Advanced / Error Handling | 10% | 1p |
+| Summary | 10% | 1p |
 
-## 4. 이론 vs 실습 비율
+## 4. Theory vs. Practice Ratio
+<!-- 이론과 실습의 비율 기준 -->
 
-- **기본 비율**: 이론 30%, 실습 70%
-- 입문자 대상: 이론 40%, 실습 60%
-- 고급자 대상: 이론 20%, 실습 80%
+- **Default ratio**: Theory 30%, Practice 70%
+- Beginner audience: Theory 40%, Practice 60%
+- Advanced audience: Theory 20%, Practice 80%
 
-## 5. 페이지 산정 기준
+## 5. Page Estimation Criteria
+<!-- 페이지 산정 기준 -->
 
-- 마크다운 기준 약 40줄 = 1페이지
-- 코드 블록 포함 시 코드 라인도 포함하여 산정
-- Mermaid 다이어그램 = 약 0.5페이지
-- 이미지 = 약 0.5~1페이지
+- Approximately 40 lines of Markdown = 1 page
+- Code blocks are counted including code lines
+- Mermaid diagram = approximately 0.5 pages
+- Image = approximately 0.5–1 page
 
-## 6. 목차 검증 체크리스트
+## 6. TOC Verification Checklist
+<!-- 목차 검증 체크리스트 -->
 
-- [ ] 챕터 수 × 평균 페이지가 100페이지 이하인가
-- [ ] 도입부 → 심화 순서로 학습 곡선이 자연스러운가
-- [ ] 각 챕터가 단독으로도 의미가 있는가
-- [ ] 첫 챕터에서 독자가 실행 결과를 볼 수 있는가 (조기 성취감)
+- [ ] Is (number of chapters × average pages) 100 pages or fewer?
+- [ ] Does the learning curve flow naturally from introduction to advanced topics?
+- [ ] Does each chapter stand alone as a meaningful unit?
+- [ ] Can the reader see a working result in the first chapter? (early sense of achievement)

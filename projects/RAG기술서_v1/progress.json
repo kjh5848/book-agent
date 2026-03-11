@@ -1,0 +1,28 @@
+{
+  "book_title": "AI 업무 비서 구축 — RAG + MCP 실전 가이드",
+  "mode": "manual",
+  "status": "done",
+  "created_at": "2026-02-22",
+  "updated_at": "2026-02-26",
+  "phases": {
+    "phase_0_outline": { "status": "done", "started_at": "2026-02-22", "completed_at": "2026-02-22", "approved": true },
+    "phase_1_planning": { "status": "done", "started_at": "2026-02-22", "completed_at": "2026-02-22", "verification": "PASS", "approved": true },
+    "phase_2_code": { "status": "done", "started_at": "2026-02-22", "completed_at": "2026-02-25", "verification": "CONDITIONAL_PASS", "approved": true, "note": "CH02~CH10 전 챕터 검증 완료. CH06 PASS, 나머지 CONDITIONAL_PASS. FAIL 없음. 사용자 승인 완료." },
+    "phase_3_toc": { "status": "done", "started_at": "2026-02-26", "completed_at": "2026-02-26", "verification": "PASS", "approved": true },
+    "phase_4_writing": { "status": "done", "started_at": "2026-02-26", "completed_at": "2026-02-26", "verification": "CONDITIONAL_PASS", "approved": true },
+    "phase_5_merge": { "status": "done", "started_at": "2026-02-26", "completed_at": "2026-02-26", "approved": true },
+    "phase_6_done": { "status": "done", "completed_at": "2026-02-26" }
+  },
+  "chapters": [
+    { "number": 1, "title": "이 책의 목표와 최종 완성본 미리보기", "status": "done", "file": "chapters/CH01_이_책의_목표와_최종_완성본_미리보기.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 2, "title": "개발 환경 구축", "status": "done", "file": "chapters/CH02_개발_환경_구축.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 3, "title": "LLM의 한계와 RAG의 필요성", "status": "done", "file": "chapters/CH03_LLM의_한계와_RAG의_필요성.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 4, "title": "베이스 시스템 확보", "status": "done", "file": "chapters/CH04_베이스_시스템_확보.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 5, "title": "사내 문서 표준화", "status": "done", "file": "chapters/CH05_사내_문서_표준화.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 6, "title": "벡터 DB 구축", "status": "done", "file": "chapters/CH06_벡터_DB_구축.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 7, "title": "RAG Q&A 엔진 구현", "status": "done", "file": "chapters/CH07_RAG_QA_엔진_구현.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 8, "title": "통합 에이전트 설계 (MCP + RAG)", "status": "done", "file": "chapters/CH08_통합_에이전트_설계.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 9, "title": "LangChain 최종 연결", "status": "done", "file": "chapters/CH09_LangChain_최종_연결.md", "verification": "CONDITIONAL_PASS" },
+    { "number": 10, "title": "RAG 시스템 튜닝", "status": "done", "file": "chapters/CH10_RAG_시스템_튜닝.md", "verification": "CONDITIONAL_PASS" }
+  ]
+}

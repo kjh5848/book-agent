@@ -1,57 +1,66 @@
-# 박스 스타일 가이드 (Admonitions)
+# Box Style Guide (Admonitions)
 
-본문에 삽입하는 인용 박스의 종류와 사용 규칙을 정의합니다.
+<!-- 본문에 삽입하는 인용 박스의 종류와 사용 규칙 -->
 
-## 1. 박스 종류
+Defines the types and usage rules for admonition boxes inserted into the body text.
 
-### 팁 (Tip)
+## 1. Box Types
+<!-- 박스 종류 -->
 
-유용한 정보나 꿀팁을 전달합니다.
+### Tip
+<!-- 유용한 정보나 꿀팁을 전달하는 박스 -->
 
-```markdown
-> **팁: 제목**
-> 내용...
-```
-
-### 주의 (Caution)
-
-잠재적인 문제나 흔한 실수를 경고합니다.
+Conveys useful information or helpful tips.
 
 ```markdown
-> **주의: 제목**
-> 내용...
+> **팁: Title**
+> Content...
 ```
 
-### 경고 (Warning)
+### Caution
+<!-- 잠재적인 문제나 흔한 실수를 경고하는 박스 -->
 
-데이터 손실이나 치명적인 오류 위험을 알립니다.
+Warns about potential issues or common mistakes.
 
 ```markdown
-> **경고: 제목**
-> 내용...
+> **주의: Title**
+> Content...
 ```
 
-### 참고 (Reference)
+### Warning
+<!-- 데이터 손실이나 치명적인 오류 위험을 알리는 박스 -->
 
-부가 설명이나 참조 링크를 제공합니다.
+Alerts about the risk of data loss or critical errors.
 
 ```markdown
-> **참고: 제목**
-> 내용...
+> **경고: Title**
+> Content...
 ```
 
-### 질문 (Q&A)
+### Reference
+<!-- 부가 설명이나 참조 링크를 제공하는 박스 -->
 
-Q&A 형식으로 독자의 의문을 해소합니다.
+Provides additional explanation or reference links.
 
 ```markdown
-> **질문: 질문 내용?**
-> 답변...
+> **참고: Title**
+> Content...
 ```
 
-## 2. 사용 규칙
+### Q&A
+<!-- Q&A 형식으로 독자의 의문을 해소하는 박스 -->
 
-- 한 섹션에 박스를 3개 이상 연속 배치하지 않습니다.
-- **경고** 박스는 정말 치명적인 경우에만 사용합니다.
-- 박스 내부에서도 하십시오체를 유지합니다.
-- 박스 내부에 코드 블록을 넣을 경우 들여쓰기에 주의합니다.
+Addresses reader questions in Q&A format.
+
+```markdown
+> **질문: Question content?**
+> Answer...
+```
+
+## 2. Usage Rules
+<!-- 박스 사용 규칙 -->
+
+- Do not place 3 or more boxes consecutively within a single section.
+- Use the **Warning** box only for truly critical cases.
+- Maintain formal register (하십시오체) inside boxes.
+- Pay attention to indentation when placing code blocks inside boxes.

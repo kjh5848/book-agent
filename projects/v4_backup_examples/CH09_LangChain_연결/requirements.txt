@@ -1,0 +1,36 @@
+# CH09 LangChain 연결 전략 — 의존성 목록
+# 설치 명령: pip install -r requirements.txt
+
+# --- LangChain 코어 ---
+langchain==0.3.25
+langchain-core==0.3.58
+langchain-community==0.3.23
+langchain-ollama==0.2.3
+langchain-openai==0.3.16
+langchain-chroma==0.2.4
+
+# --- LLM 제공자 ---
+# Ollama: 별도 설치 필요 (https://ollama.com)
+openai==1.78.0
+
+# --- 벡터 DB ---
+chromadb==0.6.3
+
+# --- 임베딩 모델 ---
+sentence-transformers==3.4.1
+huggingface-hub==0.30.2
+
+# --- PostgreSQL ---
+psycopg2-binary==2.9.10
+sqlalchemy==2.0.40
+
+# --- 문서 파싱 (data/docs/ 자동 구축용) ---
+pypdf==4.3.1
+python-docx==1.1.2
+openpyxl==3.1.5
+
+# --- 환경 변수 ---
+python-dotenv==1.0.1
+
+# --- 선택: LLM 모니터링 ---
+# langfuse==2.60.5

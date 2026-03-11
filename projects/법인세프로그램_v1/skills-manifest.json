@@ -1,0 +1,57 @@
+{
+  "version": "1.0",
+  "description": "v1 수동 모드 에이전트-스킬 매핑",
+  "agents": {
+    "v1-planning-agent": {
+      "skills": ["planning", "visual"],
+      "model": "opus",
+      "tools": ["Read", "Write", "WebSearch"]
+    },
+    "v1-planning-verifier": {
+      "skills": ["planning", "verification"],
+      "model": "haiku",
+      "tools": ["Read", "Write"]
+    },
+    "v1-code-agent": {
+      "skills": ["code", "visual"],
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash"]
+    },
+    "v1-code-verifier": {
+      "skills": ["code", "verification"],
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash"]
+    },
+    "v1-toc-agent": {
+      "skills": ["writing", "planning"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-toc-verifier": {
+      "skills": ["writing", "planning", "verification"],
+      "model": "haiku",
+      "tools": ["Read", "Write"]
+    },
+    "v1-writing-agent": {
+      "skills": ["writing", "writing-concept", "visual", "code"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-writing-verifier": {
+      "skills": ["writing", "visual", "code", "verification"],
+      "model": "sonnet",
+      "tools": ["Read", "Write"]
+    },
+    "v1-chapter-reviewer": {
+      "skills": ["lab-report"],
+      "model": "sonnet",
+      "tools": ["Read", "Write", "Bash"]
+    },
+    "v1-retrospective": {
+      "skills": [],
+      "model": "opus",
+      "tools": ["Read", "Write"],
+      "note": "전체 산출물을 직접 참조"
+    }
+  }
+}

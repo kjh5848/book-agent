@@ -1,54 +1,69 @@
-# 검증 공통 규칙
+# Verification Common Rules
 
-## 1. 판정 기준
+## 1. Judgment Criteria
+<!-- PASS/FAIL/CONDITIONAL_PASS 판정 기준 -->
 
-| 판정 | 조건 | 다음 동작 |
-|------|------|----------|
-| **PASS** | 모든 필수 항목 통과 | 다음 Phase로 진행 |
-| **CONDITIONAL_PASS** | 필수 항목 통과, 권장 항목 일부 실패 | 다음 Phase로 진행 (경고 기록) |
-| **FAIL** | 필수 항목 1건 이상 실패 | 생산 에이전트에 수정 요청 후 재검증 |
+| Judgment | Condition | Next Action |
+|----------|-----------|-------------|
+| **PASS** | All required items passed | Proceed to next Phase |
+| **CONDITIONAL_PASS** | Required items passed, some recommended items failed | Proceed to next Phase (record warnings) |
+| **FAIL** | One or more required items failed | Request revision from production agent, then re-verify |
 
-## 2. 검증 보고서 표준 형식
+## 2. Verification Report Standard Format
+<!-- 검증 보고서 표준 형식 -->
 
 ```markdown
-# 검증 보고서: {대상명}
+# Verification Report: {Target Name}
 
-## 판정: {PASS / CONDITIONAL_PASS / FAIL}
+## Judgment: {PASS / CONDITIONAL_PASS / FAIL}
 
-## 검증 항목
+## Verification Items
 
-| # | 항목 | 필수/권장 | 결과 | 비고 |
-|---|------|---------|------|------|
-| 1 | {항목명} | 필수 | PASS/FAIL | {상세 내용} |
-| 2 | {항목명} | 권장 | PASS/FAIL | {상세 내용} |
+| # | Item | Required/Recommended | Result | Notes |
+|---|------|----------------------|--------|-------|
+| 1 | {item name} | Required | PASS/FAIL | {details} |
+| 2 | {item name} | Recommended | PASS/FAIL | {details} |
 
-## 실패 항목 상세 (FAIL인 경우)
+## Failed Item Details (when FAIL)
 
-### 항목 {번호}: {항목명}
-- **현재 상태**: {문제 설명}
-- **기대 상태**: {올바른 상태}
-- **수정 제안**: {구체적 수정 방법}
+### Item {number}: {item name}
+- **Current State**: {problem description}
+- **Expected State**: {correct state}
+- **Suggested Fix**: {specific fix method}
 
-## 요약
-- 총 검증 항목: {N}개
-- 통과: {N}개
-- 실패: {N}개
-- 시도 횟수: {N}/2
+## Summary
+- Total verification items: {N}
+- Passed: {N}
+- Failed: {N}
+- Attempt count: {N}/2
 ```
 
-## 3. 재시도 프로토콜
+## 3. Retry Protocol
+<!-- 검증 실패 시 재시도 프로토콜 -->
 
-1. 검증 에이전트가 FAIL 판정 시, 실패 항목 상세를 포함한 보고서를 반환한다.
-2. 오케스트레이터는 해당 보고서를 생산 에이전트에게 전달하여 수정을 요청한다.
-3. 생산 에이전트가 수정 완료 후, 검증 에이전트가 재검증한다.
-4. **최대 2회 재시도** 후에도 FAIL이면, 해당 Phase를 `review` 상태로 전환한다.
-5. `review` 상태는 사용자의 수동 개입이 필요함을 의미한다.
+1. When the verification agent issues a FAIL judgment, it returns a report containing details of the failed items.
+2. The orchestrator forwards the report to the production agent and requests revisions.
+3. After the production agent completes revisions, the verification agent re-verifies.
+4. If FAIL persists after **a maximum of 2 retries**, the Phase transitions to `review` status.
+5. `review` status means manual user intervention is required.
 
-## 4. Phase별 검증 체크리스트 참조
+## 4. Code Workflow Exception Condition
+<!-- 코드 워크플로우 예외 조건 — bash 블록 CONDITIONAL 방지 -->
 
-각 검증 에이전트는 자신의 Phase에 해당하는 체크리스트를 사용한다:
+**bash/shell code blocks are exempt from the Code Workflow requirement.**
 
-- **기획 검증**: `planning/blueprint.md` 의 "기획 검증 체크리스트" (5항목)
-- **코드 검증**: `code-python/error-handling.md` + 실행 검증 (7항목)
-- **목차 검증**: `planning/pagination.md` 의 "목차 검증 체크리스트" (4항목)
-- **집필 검증**: `writing/style.md` + `writing/chapter-structure.md` 의 체크리스트 (6카테고리)
+When evaluating writing verification item "Code Workflow placement":
+- `python`, `javascript`, `typescript` blocks → **Required** (FAIL if missing)
+- `bash`, `sh`, `zsh`, `shell` blocks → **Exempt** (do NOT mark as CONDITIONAL or FAIL)
+
+This prevents all chapters from generating unnecessary CONDITIONAL_PASS judgments due to shell command blocks.
+
+## 5. Per-Phase Verification Checklist Reference
+<!-- 각 Phase별 검증 체크리스트 참조 -->
+
+Each verification agent uses the checklist corresponding to its Phase:
+
+- **Planning verification**: "Planning Verification Checklist" in `planning/blueprint.md` (5 items)
+- **Code verification**: `code-python/error-handling.md` + execution verification (7 items)
+- **TOC verification**: "TOC Verification Checklist" in `planning/pagination.md` (4 items)
+- **Writing verification**: Checklists in `writing/style.md` + `writing/chapter-structure.md` (6 categories)

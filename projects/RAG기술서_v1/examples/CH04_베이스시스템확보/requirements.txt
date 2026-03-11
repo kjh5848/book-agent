@@ -1,0 +1,26 @@
+# =============================================================
+# requirements.txt
+# AI 업무 비서 구축: RAG + MCP 실전 가이드 - 4장 베이스 시스템 확보
+#
+# FastAPI + PostgreSQL CRUD 서버 의존성
+# Docker 컨테이너 기반 실행 전용입니다. (python:3.11-slim)
+# 로컬 pip install 참조용으로도 사용 가능합니다.
+# =============================================================
+
+# FastAPI 웹 프레임워크
+fastapi>=0.111.0
+
+# ASGI 서버 (표준 extras: websockets, httptools 포함)
+uvicorn[standard]>=0.30.0
+
+# SQLAlchemy ORM (2.0 스타일)
+SQLAlchemy>=2.0.0
+
+# PostgreSQL 드라이버 (바이너리 포함, 별도 컴파일 불필요)
+psycopg2-binary>=2.9.9
+
+# Pydantic v2 데이터 검증
+pydantic>=2.7.0
+
+# 환경 변수 로딩 (.env 파일 지원)
+python-dotenv>=1.0.0

@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-02-27 04:47:17",
+  "total_documents": 6,
+  "documents": [
+    {
+      "doc_id": "FIN_2025_상반기_매출현황_unversioned",
+      "filename": "FIN_2025_상반기_매출현황.xlsx",
+      "title": "2025_상반기_매출현황",
+      "department": "재무",
+      "department_code": "FIN",
+      "version": "unversioned",
+      "date": "2026-02-27",
+      "format": "XLSX",
+      "file_size_bytes": 6238,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/finance/FIN_2025_상반기_매출현황.xlsx",
+      "validation_status": "WARN",
+      "validation_message": "버전 정보 누락 (권장 형식: FIN_2025_상반기_매출현황_v1.0.xlsx)"
+    },
+    {
+      "doc_id": "FIN_부서별_예산기안서_unversioned",
+      "filename": "FIN_부서별_예산기안서.xlsx",
+      "title": "부서별_예산기안서",
+      "department": "재무",
+      "department_code": "FIN",
+      "version": "unversioned",
+      "date": "2026-02-27",
+      "format": "XLSX",
+      "file_size_bytes": 6452,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/finance/FIN_부서별_예산기안서.xlsx",
+      "validation_status": "WARN",
+      "validation_message": "버전 정보 누락 (권장 형식: FIN_부서별_예산기안서_v1.0.xlsx)"
+    },
+    {
+      "doc_id": "HR_정보보안서약서_unversioned",
+      "filename": "HR_정보보안서약서.pdf",
+      "title": "정보보안서약서",
+      "department": "인사",
+      "department_code": "HR",
+      "version": "unversioned",
+      "date": "2026-02-27",
+      "format": "PDF",
+      "file_size_bytes": 1872215,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/hr/HR_정보보안서약서.pdf",
+      "validation_status": "WARN",
+      "validation_message": "버전 정보 누락 (권장 형식: HR_정보보안서약서_v1.0.pdf)"
+    },
+    {
+      "doc_id": "HR_취업규칙_1.0",
+      "filename": "HR_취업규칙_v1.0.pdf",
+      "title": "취업규칙",
+      "department": "인사",
+      "department_code": "HR",
+      "version": "1.0",
+      "date": "2026-02-27",
+      "format": "PDF",
+      "file_size_bytes": 908545,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/hr/HR_취업규칙_v1.0.pdf",
+      "validation_status": "PASS",
+      "validation_message": "파일명 규칙 준수"
+    },
+    {
+      "doc_id": "OPS_신규서비스_런칭전략_unversioned",
+      "filename": "OPS_신규서비스_런칭전략.pdf",
+      "title": "신규서비스_런칭전략",
+      "department": "운영",
+      "department_code": "OPS",
+      "version": "unversioned",
+      "date": "2026-02-27",
+      "format": "PDF",
+      "file_size_bytes": 70049,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/ops/OPS_신규서비스_런칭전략.pdf",
+      "validation_status": "WARN",
+      "validation_message": "버전 정보 누락 (권장 형식: OPS_신규서비스_런칭전략_v1.0.pdf)"
+    },
+    {
+      "doc_id": "SEC_보안규정_1.0",
+      "filename": "SEC_보안규정_v1.0.docx",
+      "title": "보안규정",
+      "department": "보안",
+      "department_code": "SEC",
+      "version": "1.0",
+      "date": "2026-02-27",
+      "format": "DOCX",
+      "file_size_bytes": 38039,
+      "relative_path": "/Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3/examples/CH05_사내_문서_수집_표준화/data/docs/security/SEC_보안규정_v1.0.docx",
+      "validation_status": "PASS",
+      "validation_message": "파일명 규칙 준수"
+    }
+  ]
+}

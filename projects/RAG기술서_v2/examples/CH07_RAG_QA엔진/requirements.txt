@@ -1,0 +1,24 @@
+# CH07 RAG Q&A 엔진 의존성
+# Python 3.11+ 기준
+
+# 환경 변수 로드
+python-dotenv==1.2.1
+
+# ChromaDB - 로컬 벡터 데이터베이스
+chromadb==1.5.1
+
+# LangChain 코어 패키지 (LCEL 파이프라인)
+langchain==0.3.25
+langchain-core==0.3.55
+langchain-ollama==0.3.2
+
+# Ollama API 호출 (임베딩 및 LLM)
+requests==2.32.5
+
+# sentence-transformers - Ollama 미연결 시 fallback 임베딩
+sentence-transformers==5.2.3
+
+# sentence-transformers 의존성
+torch==2.10.0
+transformers==5.2.0
+numpy==2.4.2

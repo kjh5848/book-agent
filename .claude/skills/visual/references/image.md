@@ -1,88 +1,139 @@
-# 이미지 생성 및 관리 규칙
+# Image Generation and Management Rules
 
-## 0. 시각 자료 유형별 도구 선택
+## 0. Tool Selection by Visual Asset Type
+<!-- 시각 자료 유형별 도구 선택 기준 -->
 
-| 시각 자료 유형 | 도구 | 생성 시점 |
-|--------------|------|---------|
-| 흐름도·아키텍처·시퀀스 다이어그램 | **Mermaid** | 집필 시 즉시 |
-| 개념 설명 삽화·은유 이미지 | **Gemini 이미지** | 집필 완료 후 일괄 생성 |
-| 실습 결과 스크린샷 (터미널·UI) | **직접 캡처** | 예제 코드 실행 후 캡처 |
+| Visual Asset Type | Tool | When to Create |
+|-------------------|------|----------------|
+| Flow diagrams, architecture, sequence diagrams | **Mermaid** | Immediately during writing |
+| Concept illustration/metaphor images | **Gemini Image** | Batch generation after writing is complete |
+| Practice result screenshots (terminal/UI) | **Direct Capture** | After running example code |
 
-집필 시점에는 Gemini 이미지와 실습 캡처가 없으므로 유형에 맞는 **플레이스홀더**를 삽입한다.
-캡션은 집필 시 미리 작성해 둔다.
+During writing, Gemini images and practice captures are not available, so insert the appropriate **placeholder** for each type.
+Write captions in advance during writing.
 
 ---
 
-## 1. 플레이스홀더 삽입 (3가지 방식)
+## 0.5. Path Convention
+<!-- 이미지 경로 규칙 — 모든 플레이스홀더에 적용 -->
 
-### 방식 A — 개념 이미지: 텍스트 설명 플레이스홀더
+모든 이미지(Gemini 생성, 실습 캡처)는 **챕터별 단일 폴더**에 저장한다.
 
-구체적인 Gemini 프롬프트를 아직 모를 때 사용한다.
-
-```markdown
-<!-- [IMAGE PLACEHOLDER: {장번호}_{식별자} — {이미지가 보여줄 내용 한 줄 설명}] -->
-*그림 {장번호}-{순번}: {캡션}*
+프로젝트 구조:
+```
+{project}/
+├── chapters/CH{N}_{title}.md   ← 챕터 원고
+├── assets/
+│   ├── CH01/                   ← CH01의 모든 이미지 (Gemini + 캡처)
+│   ├── CH02/
+│   └── ...CH10/
 ```
 
-**예시:**
+**Two path types are required in every placeholder:**
+
+| 용도 | 경로 기준 | 형식 | 예시 |
+|------|----------|------|------|
+| `path:` (에이전트/스크립트용) | 프로젝트 루트(`{project}/`) | `assets/CH{N}/{id}.png` | `assets/CH01/01_chapter-opening.png` |
+| `![alt](src)` (마크다운 렌더링) | 챕터 파일(`chapters/`) | `../assets/CH{N}/{id}.png` | `../assets/CH01/01_chapter-opening.png` |
+
+- `path:` — 캡처 에이전트, 이미지 생성 스크립트가 저장 위치를 결정할 때 사용
+- `![alt](src)` — 마크다운 렌더링 시 챕터 파일 위치에서 상대 경로로 이미지를 불러옴
+
+> **주의**: 챕터 파일이 `chapters/` 폴더 안에 있으므로 `![alt](assets/...)` 는 **오류**. 반드시 `../assets/...` 를 사용한다.
+
+---
+
+## 1. Placeholder Insertion (2 Methods)
+<!-- 집필 시점에 삽입하는 2가지 플레이스홀더 방식 -->
+
+### Method A — Concept Image: Gemini Prompt Placeholder
+<!-- 방식 A: 아이콘 사전을 참고하여 프롬프트까지 확정하여 삽입 -->
+
+Use when inserting a concept image. The prompt must be finalized by referencing the project icon dictionary (§2).
+
 ```markdown
-<!-- [IMAGE PLACEHOLDER: 02_concept_overview — 시스템 전체 구성요소와 데이터 흐름 개요] -->
-*그림 2-1: 시스템 전체 구성 개요*
-```
-
-### 방식 B — 개념 이미지: Gemini 프롬프트 플레이스홀더
-
-프로젝트 아이콘 사전(§2)을 참고하여 프롬프트까지 확정했을 때 사용한다.
-
-```markdown
-<!-- [GEMINI PROMPT: {장번호}_{식별자}]
-{§3의 베이스 스타일 + 프로젝트의 아이콘 사전(outline/image-guide.md)을 조합한 완전한 프롬프트}
+<!-- [GEMINI PROMPT: {NN}_{identifier}]
+path: assets/CH{N}/{NN}_{identifier}.png
+{Complete prompt combining §3 base style + project icon dictionary}
+Style: {style-tag}
 -->
-*그림 {장번호}-{순번}: {캡션}*
+![{caption}](../assets/CH{N}/{NN}_{identifier}.png)
+*그림 {N}-{order}: {caption}*
 ```
 
-### 방식 C — 실습 결과: 캡처 필요 플레이스홀더
-
-실습 섹션에서 실제 실행 결과 화면을 캡처해야 할 위치에 삽입한다.
-Gemini 이미지가 아니므로 프롬프트 없이 **무엇을 캡처해야 하는지**만 명시한다.
-
+**Example:**
 ```markdown
-<!-- [CAPTURE NEEDED: {장번호}_{식별자} — {캡처할 화면 설명: 어떤 명령어 실행 후 어떤 상태}] -->
-*그림 {장번호}-{순번}: {캡션}*
+<!-- [GEMINI PROMPT: 03_docker-why]
+path: assets/CH03/03_docker-why.png
+Minimalist flat-design infographic illustrating Docker isolation. Three container boxes
+labeled 'ollama', 'chromadb', 'app' inside a 'docker-compose' boundary. Arrows show
+inter-container communication. White background, Korean labels, 16:9 aspect ratio.
+Style: architecture-infographic
+-->
+![Docker 격리 구조](../assets/CH03/03_docker-why.png)
+*그림 3-2: Docker Compose가 각 서비스를 격리하여 실행하는 구조*
 ```
 
-**예시:**
-```markdown
-<!-- [CAPTURE NEEDED: 03_ollama-run — `ollama run deepseek-r1` 실행 직후 터미널 전체 화면 (모델 로딩 완료 프롬프트 표시 상태)] -->
-*그림 3-1: Ollama 모델 실행 성공 화면*
-```
+### Method B — Practice Result: Capture Needed Placeholder
+<!-- 방식 B: 실제 실행 결과 화면을 캡처해야 할 위치에 삽입 -->
+
+Insert at locations in the practice section where the actual execution result screen must be captured.
+Since this is not a Gemini image, specify only **what needs to be captured** without a prompt.
 
 ```markdown
-<!-- [CAPTURE NEEDED: 06_query-result — `python src/main.py` 실행 후 터미널에 출력된 질의 응답 결과 전체] -->
-*그림 6-2: RAG 질의 응답 결과*
+<!-- [CAPTURE NEEDED: {NN}_{identifier}
+  path: assets/CH{N}/{NN}_{identifier}.png
+  desc: {description of screen to capture: which command was run and what state it shows}
+] -->
+![{caption}](../assets/CH{N}/{NN}_{identifier}.png)
+*그림 {N}-{order}: {caption}*
+```
+
+**Example:**
+```markdown
+<!-- [CAPTURE NEEDED: 03_ollama-list
+  path: assets/CH03/03_ollama-list.png
+  desc: `ollama list` 실행 후 deepseek-r1 모델이 목록에 나타난 터미널 화면
+] -->
+![ollama list 실행 결과](../assets/CH03/03_ollama-list.png)
+*그림 3-3: deepseek-r1 모델 다운로드 완료 확인*
 ```
 
 ---
 
-## 2. 캡처 가이드라인 (방식 C)
+## 2. Capture Guidelines (Method B)
+<!-- 방식 B 실습 캡처 시 준수 기준 -->
 
-실습 캡처 시 아래 기준을 준수한다.
+Comply with the following criteria when capturing practice screenshots.
 
-| 항목 | 기준 |
-|------|------|
-| 캡처 범위 | 터미널 전체 화면 (명령어 입력 줄 포함) |
-| 해상도 | Retina/HiDPI 권장, 최소 1280px 너비 |
-| 터미널 테마 | 밝거나 어두운 배경 모두 허용, 인쇄 시 흑백 변환 고려 |
-| 오류 화면 | 의도적 오류 예시는 빨간 텍스트가 포함된 화면 그대로 캡처 |
-| 민감 정보 | API 키, 비밀번호 등 실제 값은 블러 처리 후 캡처 |
+| Item | Criteria |
+|------|----------|
+| Capture range | Full terminal screen (including command input line) |
+| Resolution | Retina/HiDPI recommended, minimum 1280px width |
+| Terminal theme | Both light and dark backgrounds allowed; consider grayscale conversion for print |
+| Error screen | Capture intentional error examples as-is, including red text |
+| Sensitive data | Blur actual values (API keys, passwords, etc.) before capturing |
+
+### 스크린샷과 코드 블록 중복 금지
+
+실행 결과를 보여줄 때 **스크린샷과 터미널 출력 코드 블록을 동시에 사용하지 않는다.** 둘 중 하나만 선택한다.
+
+| 상황 | 사용할 형식 |
+|------|-----------|
+| 스크린샷(`<img>`)이 있는 경우 | 스크린샷만 사용. 코드 블록으로 같은 출력을 반복하지 않는다 |
+| 스크린샷이 없는 경우 (플레이스홀더 단계) | 코드 블록으로 예상 출력을 표시한다 |
+| 소스 코드(`\`\`\`python`, `\`\`\`bash` 등) | 이것은 **실행 명령**이므로 스크린샷과 무관하게 유지한다 |
+
+> **핵심**: 언어 태그가 없는 코드 블록(` ``` `)으로 터미널 출력을 보여준 뒤 바로 아래에 같은 내용의 스크린샷이 오면 **중복**이다. 스크린샷이 확보된 시점에서 출력 코드 블록을 제거한다.
 
 ---
 
-## 3. Gemini 이미지 베이스 스타일
+## 3. Gemini Image Base Style
+<!-- 모든 개념 이미지의 베이스 프롬프트 -->
 
-모든 개념 이미지는 아래 베이스 프롬프트를 기반으로 생성한다.
+All concept images are generated based on the following base prompt.
 
-**베이스 프롬프트:**
+**Base Prompt:**
 ```
 A minimalist black and white technical diagram with a strict 16:9 aspect ratio
 on a solid white background. No shading, no 3D effects, only clean thin line art.
@@ -90,37 +141,65 @@ The entire assembly of icons, lines, and text is perfectly centered globally
 within the 16:9 frame, leaving generous and equal white space on all sides.
 ```
 
-### 공통 심볼 패턴
+### Common Symbol Patterns
+<!-- 공통 심볼 패턴 -->
 
-| 대상 | 프롬프트 패턴 |
-|------|-------------|
-| 사람·사용자 | `minimalist line-art person icon labeled '{레이블}'` |
-| 서버·컴퓨터 | `minimalist line-art server rack icon labeled '{레이블}'` |
-| 데이터베이스 | `minimalist line-art cylinder database icon labeled '{레이블}'` |
-| 문서·파일 더미 | `minimalist line-art stack of papers icon labeled '{레이블}'` |
-| AI·모델 | `minimalist line-art brain icon labeled '{레이블}'` |
-| 클라우드 | `minimalist line-art cloud icon labeled '{레이블}'` |
+| Target | Prompt Pattern |
+|--------|----------------|
+| Person/User | `minimalist line-art person icon labeled '{label}'` |
+| Server/Computer | `minimalist line-art server rack icon labeled '{label}'` |
+| Database | `minimalist line-art cylinder database icon labeled '{label}'` |
+| Document/File stack | `minimalist line-art stack of papers icon labeled '{label}'` |
+| AI/Model | `minimalist line-art brain icon labeled '{label}'` |
+| Cloud | `minimalist line-art cloud icon labeled '{label}'` |
 
-> **프로젝트 특화 아이콘**: 레이블·추가 심볼은 `outline/image-guide.md`에 정의한다.
-
----
-
-## 4. 구도 및 여백 규칙 (Gemini 이미지)
-
-- **Safety Margin**: 도식 전체가 캔버스의 60~70% 내외만 차지
-- **Global Centering**: 전체 조립체의 무게 중심을 16:9 프레임 정중앙에 배치
+> **Project-specific icons**: Define labels and additional symbols in `outline/image-guide.md`.
 
 ---
 
-## 5. 파일 삽입 및 캡션 규칙 (이미지 준비 완료 후)
+## 4. Composition and Margin Rules (Gemini Image)
+<!-- Gemini 이미지 구도 및 여백 규칙 -->
 
-플레이스홀더를 실제 이미지로 교체할 때 아래 형식을 사용한다.
+- **Safety Margin**: The entire diagram occupies approximately 60–70% of the canvas
+- **Global Centering**: Place the center of gravity of the entire assembly at the exact center of the 16:9 frame
 
+---
+
+## 5. File Insertion and Caption Rules (After Image is Ready)
+<!-- 이미지 준비 완료 후 플레이스홀더를 실제 이미지로 교체하는 형식 -->
+
+When replacing placeholders with actual images, use `<img>` tag with `width` attribute.
+Remove the HTML comment block.
+
+### 이미지 사이즈 규칙
+
+모든 이미지는 `<img>` HTML 태그로 삽입하고, **`width="720"`** 을 기본값으로 사용한다.
+
+| 유형 | width | 용도 |
+|------|-------|------|
+| 전체 화면 캡처 (대시보드, Swagger UI, 웹 UI) | `720` | 기본값 |
+| 터미널 출력 | `720` | 기본값 |
+| 다이어그램/개념도 | `720` | 기본값 |
+
+> **규칙**: `![alt](src)` Markdown 문법 대신 반드시 `<img src="..." width="720" alt="...">` 를 사용한다.
+> 캡션(`*그림 N-M: ...*`)은 `<img>` 태그 다음 빈 줄 뒤에 작성한다.
+
+**Before (placeholder):**
 ```markdown
-![{이미지 설명}](./images/{장번호}_{이미지식별자}.png)
-*그림 {장번호}-{순번}: {집필 시 미리 작성한 캡션}*
+<!-- [GEMINI PROMPT: 03_docker-why]
+path: assets/CH03/03_docker-why.png
+...prompt...
+-->
+![Docker 격리 구조](../assets/CH03/03_docker-why.png)
+*그림 3-2: Docker Compose가 각 서비스를 격리하여 실행하는 구조*
 ```
 
-- **경로 규칙**: `./images/{N}장_{식별자}.png`
-- **파일명 형식**: 영문 소문자, 하이픈 허용 (예: `03장_ollama-run.png`)
-- **캡션**: 집필 시 플레이스홀더에 미리 작성한 것을 그대로 사용
+**After (image ready):**
+```markdown
+<img src="../assets/CH03/03_docker-why.png" width="720" alt="Docker 격리 구조">
+
+*그림 3-2: Docker Compose가 각 서비스를 격리하여 실행하는 구조*
+```
+
+- **File name format**: Lowercase English letters, underscores, hyphens (e.g., `03_docker-why.png`)
+- **Caption**: Use exactly what was written in the placeholder during writing

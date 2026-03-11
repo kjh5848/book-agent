@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* 한글 폰트 우선 로드 */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
+                 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .terminal {
+    width: 860px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 1px solid #d0d0d0;
+  }
+  .titlebar {
+    background: #e0e0e0;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #c8c8c8;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #28c940; }
+  .title {
+    color: #555;
+    font-size: 12px;
+    margin-left: 8px;
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+  .body {
+    background: #ffffff;
+    padding: 20px 24px;
+    min-height: 120px;
+  }
+  .prompt {
+    color: #0066cc;
+    font-size: 13px;
+    margin-bottom: 10px;
+    word-break: break-all;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .prompt::before {
+    content: '$ ';
+    color: #2a9d2a;
+    font-weight: bold;
+  }
+  .output {
+    color: #222222;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
+                 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .output .err { color: #cc0000; font-weight: 500; }
+  .output .ok  { color: #2a9d2a; font-weight: 500; }
+  .meta {
+    color: #888;
+    font-size: 11px;
+    margin-top: 14px;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 8px;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  }
+  .exit-ok  { color: #2a9d2a; font-weight: 600; }
+  .exit-err { color: #cc0000; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="terminal">
+  <div class="titlebar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <div class="title">step2_context.py — Context Injection</div>
+  </div>
+  <div class="body">
+    <div class="prompt">.venv/bin/python step2_context.py</div>
+    <div class="output">질문: 우리 회사(메타코딩)의 신입사원 연차 발생 규정이 어떻게 돼?
+
+답변:
+[메타코딩 취업규칙]에 따르면, **메타코딩 회사의 신입사원 연차 발생 규정**은 다음과 같습니다:
+
+1. **신입사원은 입사 후 3년 동안 연차가 발생하지 않습니다.**  
+   - 즉, 신입사원은 3년간 정식 연차를 부여받지 못합니다.
+
+2. **대신 매월 1회 '리프레시 데이'를 유급으로 제공합니다.**  
+   - 이는 정기적으로 유급 휴가를 제공하여 업무 스트레스를 해소하고 회복할 수 있도록 돕는 제도입니다.
+
+3. **3년 근속 시 30일의 연차가 일시에 발생합니다.**  
+   - 3년 동안 리프레시 데이를 제공받은 후, 3년 차가 되는 시점에서 30일의 연차가 일시에 부여됩니다.
+
+**결론**:  
+메타코딩의 신입사원 연차 발생 규정은 **3년간 연차가 발생하지 않음**을 기본으로 하며, **3년 차 이후에 30일의 연차가 일시에 부여**됩니다. 또한, 3년 동안은 매월 1회 유급 '리프레시 데이'를 제공하여 업무 균형을 맞추는 특별한 제도가 있습니다.</div>
+    <!-- 푸터 비활성화 (책 출판용 클린 스타일) -->
+  </div>
+</div>
+</body>
+</html>

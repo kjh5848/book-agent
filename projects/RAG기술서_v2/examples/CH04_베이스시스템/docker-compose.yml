@@ -1,0 +1,61 @@
+version: "3.9"
+
+# ============================================================
+# 커넥트HR 베이스 인프라
+# 챕터 4: 베이스 시스템 확보
+#
+# 포함 서비스:
+#   - postgres: PostgreSQL 16 (직원/휴가/매출 DB)
+#   - pgadmin: pgAdmin 4 (웹 기반 DB 관리 UI, 선택)
+# ============================================================
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: connecthr_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-connecthr}
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      TZ: Asia/Seoul
+      PGTZ: Asia/Seoul
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docs/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-admin} -d ${POSTGRES_DB:-connecthr}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - connecthr_net
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: connecthr_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@connecthr.io
+      PGADMIN_DEFAULT_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      TZ: Asia/Seoul
+    ports:
+      - "5050:80"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - connecthr_net
+    profiles:
+      - pgadmin  # docker-compose --profile pgadmin up -d 로 선택적 실행
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  connecthr_net:
+    driver: bridge

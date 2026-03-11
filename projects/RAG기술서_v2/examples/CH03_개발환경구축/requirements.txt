@@ -1,0 +1,35 @@
+# =============================================================
+# CH03 개발 환경 구축 - Python 패키지 의존성
+# =============================================================
+# 설치 방법:
+#   pip install -r requirements.txt
+# =============================================================
+
+# LangChain 파이프라인 프레임워크
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-ollama>=0.1.0
+
+# 벡터 데이터베이스
+chromadb>=0.4.0
+
+# PostgreSQL 드라이버
+psycopg2-binary>=2.9.0
+
+# 환경 변수 로딩
+python-dotenv>=1.0.0
+
+# API 서버 (CH04+)
+fastapi>=0.110.0
+uvicorn>=0.27.0
+
+# 데이터 검증
+pydantic>=2.5.0
+
+# PDF 처리 (CH05+)
+pymupdf>=1.23.0
+pdfplumber>=0.10.0
+
+# HTTP 클라이언트
+requests>=2.31.0
+httpx>=0.25.0

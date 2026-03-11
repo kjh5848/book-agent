@@ -1,46 +1,52 @@
-# 갭 분석 기준 (Gap Analysis)
+# Gap Analysis Criteria
 
-기획 에이전트는 초안 분석 후 plan.md 작성 전에 갭 분석을 수행한다.
+<!-- 기획 에이전트가 초안 분석 후 plan.md 작성 전에 수행하는 갭 분석 기준 -->
 
-## 우선순위 분류
+The planning agent performs a gap analysis after reviewing the draft and before writing plan.md.
 
-| 등급 | 정의 |
-|------|------|
-| **필수** | 없으면 독자가 실무 적용 불가 |
-| **권장** | 있으면 책의 차별화 포인트 |
-| **선택** | 심화 독자를 위한 고급 내용 |
+## Priority Classification
+<!-- 갭 항목의 우선순위 분류 기준 -->
 
-## 갭 분석 절차
+| Grade | Definition |
+|-------|------------|
+| **Essential** | Without this, readers cannot apply to real work |
+| **Recommended** | Differentiates the book when included |
+| **Optional** | Advanced content for experienced readers |
 
-1. **도메인 표준 커리큘럼 도출**: WebSearch로 해당 기술의 공식 문서, 실무 가이드, 강의 커리큘럼을 조사하여 일반적으로 포함되는 핵심 챕터·개념 목록 작성
-2. **초안과 비교**: 표준 대비 누락된 개념·챕터 식별
-3. **우선순위 책정**: 독자 수준, 분량 제한, 기술 스택 연관성 고려
+## Gap Analysis Procedure
+<!-- 갭 분석 절차 -->
 
-## 기술서 공통 갭 체크 항목
+1. **Derive domain standard curriculum**: Use WebSearch to research official documentation, practical guides, and course curricula for the technology, and list the core chapters/concepts typically included.
+2. **Compare with draft**: Identify concepts or chapters missing relative to the standard.
+3. **Prioritize**: Consider reader level, page limit, and relevance to the technology stack.
 
-- **기초 개념**: 도입 챕터가 있는가?
-- **비교 분석**: 유사 기술/라이브러리 선택 기준을 제시하는가?
-- **트러블슈팅**: 독자가 자주 겪는 오류와 해결법이 있는가?
-- **실무 패턴**: 튜토리얼을 넘어선 베스트 프랙티스가 있는가?
-- **평가/검증**: 구현 결과를 측정하는 방법을 안내하는가?
+## Common Gap Check Items for Technical Books
+<!-- 기술서 공통 갭 체크 항목 -->
 
-## 사용자 제안 메시지 형식
+- **Basic concepts**: Is there an introductory chapter?
+- **Comparative analysis**: Does the book provide criteria for choosing among similar technologies/libraries?
+- **Troubleshooting**: Are common errors and solutions covered?
+- **Practical patterns**: Are there best practices beyond tutorials?
+- **Evaluation/Validation**: Is there guidance on measuring implementation results?
+
+## User Suggestion Message Format
+<!-- 사용자 제안 메시지 형식 -->
 
 ```
-## 📋 기획 갭 분석 결과
+## 📋 Planning Gap Analysis Results
 
-### [필수] 없으면 독자가 실무에 바로 적용하기 어려운 내용
-- {항목}: {이유}
+### [Essential] Content readers need to apply immediately in real work
+- {item}: {reason}
 
-### [권장] 있으면 차별화가 되는 내용
-- {항목}: {이유}
+### [Recommended] Content that differentiates the book
+- {item}: {reason}
 
-### [선택] 심화 독자에게 유용한 내용
-- {항목}: {이유}
+### [Optional] Content useful for advanced readers
+- {item}: {reason}
 
 ---
-포함할 항목을 알려주시면 기획서에 반영하겠습니다.
-현재 초안대로 진행하시려면 "현재대로 진행"이라고 말씀해 주십시오.
+Please let me know which items to include so I can reflect them in the plan.
+If you'd like to proceed with the current draft, say "Proceed as-is."
 ```
 
-**이 메시지를 출력하기 전까지 plan.md 작성을 시작하지 않는다.**
+**Do not begin writing plan.md until this message has been output.**

@@ -1,0 +1,52 @@
+[
+  {
+    "experiment": {
+      "chunk_size": 200,
+      "overlap": 20,
+      "k": 3,
+      "strategy": "fixed"
+    },
+    "precision_at_k": 0.4,
+    "avg_response_ms": 22.37
+  },
+  {
+    "experiment": {
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "strategy": "fixed"
+    },
+    "precision_at_k": 0.4,
+    "avg_response_ms": 19.34
+  },
+  {
+    "experiment": {
+      "chunk_size": 800,
+      "overlap": 100,
+      "k": 3,
+      "strategy": "fixed"
+    },
+    "precision_at_k": 0.4,
+    "avg_response_ms": 23.46
+  },
+  {
+    "experiment": {
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 5,
+      "strategy": "fixed"
+    },
+    "precision_at_k": 0.8,
+    "avg_response_ms": 19.38
+  },
+  {
+    "experiment": {
+      "chunk_size": 500,
+      "overlap": 50,
+      "k": 3,
+      "strategy": "semantic"
+    },
+    "precision_at_k": 0.4,
+    "avg_response_ms": 20.21
+  }
+]

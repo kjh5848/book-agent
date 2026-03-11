@@ -1,0 +1,25 @@
+# ============================================================
+# 커넥트HR 베이스 시스템 의존성
+# 챕터 4: 베이스 시스템 확보
+# Python 3.11 기준
+# ============================================================
+
+# 환경 변수 로딩
+python-dotenv==1.0.1
+
+# PostgreSQL 드라이버
+psycopg2-binary==2.9.9
+
+# FastAPI 웹 프레임워크
+fastapi==0.110.3
+uvicorn[standard]==0.29.0
+
+# Pydantic v2 (FastAPI 의존성 포함, 명시적 버전 고정)
+pydantic==2.7.1
+
+# LangChain (MCP 개념 소개용)
+langchain==0.2.1
+langchain-community==0.2.1
+
+# 데이터 처리
+tabulate==0.9.0

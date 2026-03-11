@@ -1,0 +1,41 @@
+[2026-02-28 02:26:58] === auto-resume-v4-v3 시작 ===
+[2026-02-28 02:26:58] v4 프로젝트: /Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v4
+[2026-02-28 02:26:58] v3 프로젝트: /Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/projects/RAG기술서_v3
+[2026-02-28 02:26:58] 재시작 간격: 300분 | 최대 재시도: 20회
+[2026-02-28 02:26:58] 
+[2026-02-28 02:26:58] ── 시도 1/20 (Phase: v4) ──
+[2026-02-28 02:26:58] v4 상태: writing_pending:CH06,CH07,CH08,CH09,CH10
+[2026-02-28 02:26:58] v4 다음 집필: CH06
+[2026-02-28 02:26:58] Claude 실행 중... (v4 스토리텔링)
+You've hit your limit · resets 4am (Asia/Seoul)
+[2026-02-28 02:32:52] Claude 종료 (exit: 0)
+[2026-02-28 02:32:52] ⚠️ progress.json 변경 없음
+[2026-02-28 02:32:52] 300분 후 재시작... (Ctrl+C 로 중단)
+[2026-02-28 07:32:52] 
+[2026-02-28 07:32:52] ── 시도 2/20 (Phase: v4) ──
+[2026-02-28 07:32:53] v4 상태: writing_pending:CH06,CH07,CH08,CH09,CH10
+[2026-02-28 07:32:53] v4 다음 집필: CH06
+[2026-02-28 07:32:53] Claude 실행 중... (v4 스토리텔링)
+**Phase 4 (집필) 완료!**
+
+모든 10개 챕터의 집필이 완료되었습니다:
+
+| 챕터 | 제목 | 상태 |
+|------|------|------|
+| CH01 | 이 책의 목표와 최종 완성본 미리보기 | writing: done |
+| CH02 | 개발 환경 설정 | writing: done |
+| CH03 | LLM의 한계와 RAG의 필요성 | writing: done |
+| CH04 | FastAPI 기본 시스템 | writing: done |
+| CH05 | 사내 문서 수집 표준화 | writing: done |
+| CH06 | VectorDB 구축 | writing: done |
+| CH07 | RAG QA 엔진 | writing: done |
+| CH08 | 통합 에이전트 설계 | writing: done |
+| CH09 | LangChain 연결 | writing: done |
+| CH10 | RAG 튜닝 | writing: done |
+
+이번 세션에서 **CH08, CH09, CH10** 3개 챕터를 집필했습니다 (CH06, CH07은 이미 완료 확인).
+
+`progress.json`이 업데이트되어 `phase_4: "done"`으로 표시되었습니다. 다음 단계는 **Phase 5 (병합 + 완료)** 입니다.
+[2026-02-28 07:45:43] Claude 종료 (exit: 0)
+[2026-02-28 07:45:43] ✅ progress.json 업데이트됨
+[2026-02-28 07:45:43] 300분 후 재시작... (Ctrl+C 로 중단)

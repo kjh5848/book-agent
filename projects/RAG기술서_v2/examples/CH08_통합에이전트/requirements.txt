@@ -1,0 +1,20 @@
+# CH08 통합 에이전트 — Python 의존성
+# Python 3.11+ 기준, 버전 고정
+
+# LangChain 핵심
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+langchain-ollama>=0.2.0
+
+# 벡터 DB
+chromadb>=0.5.0
+
+# PostgreSQL 드라이버
+psycopg2-binary>=2.9.0
+
+# 환경 변수
+python-dotenv>=1.0.0
+
+# HTTP 요청 (Ollama 연결 확인)
+requests>=2.31.0

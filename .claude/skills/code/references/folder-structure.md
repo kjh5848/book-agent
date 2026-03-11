@@ -1,70 +1,108 @@
-# 표준 폴더 구조
+# Standard Folder Structure
 
-## 기본 구조
+## Basic Structure
+<!-- 기본 프로젝트 폴더 구조 -->
 
 ```
-{프로젝트명}/
-├── README.md              ← 프로젝트 설명 및 실행 방법
-├── requirements.txt       ← Python 의존성
-├── .env.example           ← 환경 변수 템플릿 (비밀키 미포함)
-├── src/                   ← 소스 코드
+{project_name}/
+├── README.md              ← Project description and execution instructions
+├── requirements.txt       ← Python dependencies
+├── .env.example           ← Environment variable template (no secrets)
+├── src/                   ← Source code
 │   ├── __init__.py
-│   ├── main.py            ← 진입점
-│   └── {모듈명}.py
-├── data/                  ← 실습용 데이터 (PDF, 이미지 등)
-├── tests/                 ← 테스트 코드
-│   └── test_{모듈명}.py
-└── outputs/               ← 실행 결과물 (gitignore 대상)
+│   ├── main.py            ← Entry point
+│   └── {module_name}.py
+├── data/                  ← Practice data (PDFs, images, etc.)
+├── tests/                 ← Test code
+│   └── test_{module_name}.py
+└── outputs/               ← Execution outputs (gitignore target)
 ```
 
-## 실습 방식 원칙
+## Practice Method Principles
+<!-- 모든 예제 코드는 GitHub Clone 방식으로 제공하는 원칙 -->
 
-모든 예제 코드는 **GitHub Clone 방식**으로 제공한다.
-독자는 코드를 타이핑하거나 복사·붙여넣기하지 않는다. `git clone` 후 즉시 실행하는 것이 기본이다.
+All example code is provided via the **GitHub Clone method**.
+Readers do not type or copy-paste code. Cloning with `git clone` and running immediately is the standard approach.
 
-### 챕터 유형 분류
+### Chapter Type Classification
+<!-- 챕터 유형별 코드 레포 및 인프라 레포 분류 -->
 
-| 유형 | 챕터 범위 | 코드 레포 | 인프라 레포 |
-|------|---------|---------|-----------|
-| **인프라·설명 챕터** | 1~5장 | 없음 (또는 최소) | `rag-infra` 사용 |
-| **AI 코드 챕터** | 6~10장 | 챕터별 독립 레포 | `rag-infra` 전제 |
+| Type | Chapter Range | Code Repo | Infrastructure Repo |
+|------|---------------|-----------|---------------------|
+| **Infrastructure / Explanation Chapters** | Chapters 1–5 | None (or minimal) | Use `rag-infra` |
+| **AI Code Chapters** | Chapters 6–10 | Independent repo per chapter | Requires `rag-infra` |
 
-### 인프라 레포 구조 (rag-infra)
+### Infrastructure Repo Structure (rag-infra)
+<!-- Docker Compose로 전체 백엔드를 한 번에 구동하는 전용 레포 구조 -->
 
-Docker Compose로 전체 백엔드를 한 번에 구동하는 전용 레포.
+A dedicated repository that launches the entire backend with Docker Compose in one command.
 
 ```
 rag-infra/
-├── docker-compose.yml       ← PostgreSQL + FastAPI + pgAdmin 정의
+├── docker-compose.yml       ← PostgreSQL + FastAPI + pgAdmin definition
 ├── init/
-│   └── 01_schema_and_data.sql  ← 테이블 생성 + 샘플 데이터 (직원/휴가/매출)
-├── backend/                 ← FastAPI CRUD 서버
+│   └── 01_schema_and_data.sql  ← Table creation + sample data (employees/leave/sales)
+├── backend/                 ← FastAPI CRUD server
 │   ├── main.py
 │   ├── routers/
 │   └── requirements.txt
 └── README.md
 ```
 
-### AI 코드 챕터 레포 구조
+### AI Code Chapter Repo Structure
+<!-- 각 AI 코드 챕터별 독립 레포 구조 -->
 
-각 AI 코드 챕터는 독립적으로 clone 가능한 레포.
+Each AI code chapter is an independently cloneable repository.
 
 ```
-CH{번호}_{제목}/
-├── README.md              ← clone → .env → pip install → python 실행 순서 안내
-├── requirements.txt       ← Python 의존성 (버전 고정)
-├── .env.example           ← 환경 변수 템플릿 (실제 키 미포함)
+CH{number}_{title}/
+├── README.md              ← Clone → .env → pip install → python run order guide
+├── requirements.txt       ← Python dependencies (pinned versions)
+├── .env.example           ← Environment variable template (no actual keys)
 ├── src/
 │   ├── __init__.py
-│   ├── main.py            ← 진입점
-│   └── {모듈명}.py
-├── data/                  ← 실습용 데이터 (PDF, 이미지 등)
-└── outputs/               ← 실행 결과물 (.gitignore 대상)
+│   ├── main.py            ← Entry point
+│   └── {module_name}.py
+├── data/                  ← Source documents and sample data (structure is flexible)
+└── outputs/               ← Execution outputs (.gitignore target)
 ```
 
-## 필수 파일
+### Standalone Execution Rule
+<!-- 각 챕터는 선행 챕터 없이도 독립 실행 가능해야 한다는 원칙 -->
 
-- `README.md` — 학생용 실행 가이드
-- `chapter_spec.md` — 집필 에이전트 전용 명세
-- `{의존성 파일}` — 언어별, 버전 고정
-- `.env.example` — API 키 등 환경 변수 템플릿 (해당하는 경우)
+Each chapter must be runnable on its own — readers should not need to complete prior chapters first.
+
+If a chapter logically depends on data from a prior chapter (e.g., documents indexed in CH06's ChromaDB), **include the necessary sample data directly inside the chapter's project**. The folder name and structure are up to the code-agent — what matters is that `python src/main.py` works immediately after `git clone → pip install → .env setup`, without any external dependency.
+
+## Cleanup After Each Chapter
+<!-- 각 챕터 실습 완료 후 환경 정리 규칙 -->
+
+Each chapter's README and the chapter manuscript must include a **cleanup section** at the end.
+Readers must clean up the current chapter's environment before starting the next chapter.
+
+### Standard Cleanup Steps
+
+```bash
+# 1. Docker 컨테이너 종료 및 제거 (Docker를 사용한 경우)
+docker compose down
+
+# 2. 가상환경 비활성화 (venv를 사용한 경우)
+deactivate
+
+# 3. 이전 챕터 디렉토리에서 나가기
+cd ..
+```
+
+### Rules
+
+- Docker를 사용하지 않는 챕터는 `docker compose down`을 생략한다.
+- 가상환경을 사용하지 않는 챕터는 `deactivate`를 생략한다.
+- 해당 챕터에서 사용한 리소스만 정리한다. 불필요한 단계를 추가하지 않는다.
+
+## Required Files
+<!-- 반드시 포함해야 하는 파일 목록 -->
+
+- `README.md` — Student execution guide
+- `chapter_spec.md` — Writing agent specification (agent use only)
+- `{dependency file}` — Language-specific, with pinned versions
+- `.env.example` — Environment variable template for API keys, etc. (if applicable)

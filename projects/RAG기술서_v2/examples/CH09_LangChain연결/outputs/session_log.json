@@ -1,0 +1,66 @@
+{
+  "session_info": {
+    "model": "deepseek-r1",
+    "total_elapsed": 2.579,
+    "question_count": 5
+  },
+  "results": [
+    {
+      "index": 1,
+      "question": "이서연의 현재 잔여 연차는 며칠입니까?",
+      "answer": "[직원 정보] 이서연: 개발팀 개발자, 기본급 3,800,000원\n\n[연차 정보] 이서연: 총 15일 중 12일 사용, 잔여 3일",
+      "mode": "mock",
+      "from_cache": false
+    },
+    {
+      "index": 2,
+      "question": "개발팀에 소속된 직원 목록을 알려주십시오.",
+      "answer": "[개발팀 직원 목록] 총 3명: 김도현(팀장), 이서연(개발자), 오수빈(사원)",
+      "mode": "mock",
+      "from_cache": false
+    },
+    {
+      "index": 3,
+      "question": "영업팀의 2024년 연간 매출 합계는 얼마입니까?",
+      "answer": "[영업팀 2024년 연간 매출] 총 579,000,000원 / 목표 565,000,000원 (달성률 102.5%)",
+      "mode": "mock",
+      "from_cache": false
+    },
+    {
+      "index": 4,
+      "question": "김도현 팀장의 직급과 기본급을 알려주십시오.",
+      "answer": "[직원 정보] 김도현: 개발팀 팀장, 기본급 6,500,000원",
+      "mode": "mock",
+      "from_cache": false
+    },
+    {
+      "index": 5,
+      "question": "이서연의 현재 잔여 연차는 며칠입니까?",
+      "answer": "[직원 정보] 이서연: 개발팀 개발자, 기본급 3,800,000원\n\n[연차 정보] 이서연: 총 15일 중 12일 사용, 잔여 3일",
+      "mode": "cached",
+      "from_cache": true
+    }
+  ],
+  "token_summary": {
+    "total_calls": 4,
+    "total_prompt_tokens": 42,
+    "total_completion_tokens": 43,
+    "total_tokens": 85,
+    "estimated_cost_krw": 0.0,
+    "by_model": {
+      "deepseek-r1": {
+        "calls": 4,
+        "prompt_tokens": 42,
+        "completion_tokens": 43,
+        "total_tokens": 85
+      }
+    }
+  },
+  "cache_stats": {
+    "hits": 1,
+    "misses": 4,
+    "total": 5,
+    "hit_rate": 0.2,
+    "current_size": 4
+  }
+}

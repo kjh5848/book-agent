@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}대시보드 — RAG Q&A 엔진{% endblock %}
+{% block page_title %}대시보드{% endblock %}
+{% block page_subtitle %}RAG Q&A 엔진 시스템 상태{% endblock %}
+
+{% block content %}
+<div class="stat-grid">
+    <div class="stat-card">
+        <div class="stat-label">ChromaDB 문서 수</div>
+        <div class="stat-value">{{ doc_count }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">DB 상태</div>
+        <div class="stat-value {% if db_status == '정상' %}status-ok{% else %}status-err{% endif %}">
+            {{ db_status }}
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">LLM 제공자</div>
+        <div class="stat-value">{{ llm_provider }}</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-label">LLM 모델</div>
+        <div class="stat-value model-name">{{ llm_model }}</div>
+    </div>
+</div>
+
+<div class="card section-gap">
+    <div class="badge">시스템 정보</div>
+    <table>
+        <thead>
+            <tr>
+                <th>항목</th>
+                <th>값</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>임베딩 모델</td>
+                <td>{{ embed_model }}</td>
+            </tr>
+            <tr>
+                <td>ChromaDB 경로</td>
+                <td>{{ chroma_dir }}</td>
+            </tr>
+            <tr>
+                <td>LLM 모델</td>
+                <td>{{ llm_model }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="card">
+    <div class="badge">바로가기</div>
+    <div class="grid">
+        <a class="nav-link" href="/admin/qa">Q&amp;A 채팅 시작</a>
+    </div>
+</div>
+
+<style>
+.model-name { font-size: 1rem; word-break: break-all; }
+.status-ok { color: #2da44e; }
+.status-err { color: #cf222e; }
+</style>
+{% endblock %}

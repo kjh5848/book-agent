@@ -1,0 +1,115 @@
+{
+  "mode": "자동",
+  "phase_7_chapter_review": {
+    "status": "done",
+    "completed_at": "2026-02-26",
+    "completed_chapters": ["CH01", "CH02", "CH03", "CH04", "CH05", "CH06", "CH07", "CH08", "CH09", "CH10"],
+    "average_score": "27.3/30",
+    "reports": [
+      "review/chapter_review_CH01.md",
+      "review/chapter_review_CH02.md",
+      "review/chapter_review_CH03.md",
+      "review/chapter_review_CH04.md",
+      "review/chapter_review_CH05.md",
+      "review/chapter_review_CH06.md",
+      "review/chapter_review_CH07.md",
+      "review/chapter_review_CH08.md",
+      "review/chapter_review_CH09.md",
+      "review/chapter_review_CH10.md"
+    ]
+  },
+  "phase_8_lab_report": {
+    "status": "done",
+    "completed_at": "2026-02-26",
+    "completed_chapters": ["CH02", "CH03", "CH04", "CH05", "CH06", "CH07", "CH08", "CH09", "CH10"],
+    "average_score": "16.9/20",
+    "reports": [
+      "review/lab_report_CH02.md",
+      "review/lab_report_CH03.md",
+      "review/lab_report_CH04.md",
+      "review/lab_report_CH05.md",
+      "review/lab_report_CH06.md",
+      "review/lab_report_CH07.md",
+      "review/lab_report_CH08.md",
+      "review/lab_report_CH09.md",
+      "review/lab_report_CH10.md"
+    ]
+  },
+  "phase_9_retrospective": {
+    "status": "done",
+    "completed_at": "2026-02-26",
+    "report": "review/retrospective.md"
+  },
+  "chapters": [
+    {
+      "id": "CH01",
+      "file": "CH01_목표와미리보기.md",
+      "has_examples": true,
+      "chapter_review_score": "27/30",
+      "lab_report_score": "N/A (CH01 미포함)"
+    },
+    {
+      "id": "CH02",
+      "file": "CH02_기초RAG.md",
+      "has_examples": true,
+      "chapter_review_score": "28/30",
+      "lab_report_score": "19/20"
+    },
+    {
+      "id": "CH03",
+      "file": "CH03_개발환경구축.md",
+      "has_examples": true,
+      "chapter_review_score": "29/30",
+      "lab_report_score": "15/20"
+    },
+    {
+      "id": "CH04",
+      "file": "CH04_베이스시스템.md",
+      "has_examples": true,
+      "chapter_review_score": "26/30",
+      "lab_report_score": "12/20"
+    },
+    {
+      "id": "CH05",
+      "file": "CH05_문서표준화.md",
+      "has_examples": true,
+      "chapter_review_score": "29/30",
+      "lab_report_score": "19/20"
+    },
+    {
+      "id": "CH06",
+      "file": "CH06_벡터DB구축.md",
+      "has_examples": true,
+      "chapter_review_score": "29/30",
+      "lab_report_score": "20/20"
+    },
+    {
+      "id": "CH07",
+      "file": "CH07_RAG_QA엔진.md",
+      "has_examples": true,
+      "chapter_review_score": "28/30",
+      "lab_report_score": "17/20"
+    },
+    {
+      "id": "CH08",
+      "file": "CH08_통합에이전트.md",
+      "has_examples": true,
+      "chapter_review_score": "25/30",
+      "lab_report_score": "14/20"
+    },
+    {
+      "id": "CH09",
+      "file": "CH09_LangChain연결.md",
+      "has_examples": true,
+      "chapter_review_score": "29/30",
+      "lab_report_score": "19/20"
+    },
+    {
+      "id": "CH10",
+      "file": "CH10_RAG튜닝.md",
+      "has_examples": true,
+      "chapter_review_score": "28/30",
+      "lab_report_score": "17/20"
+    }
+  ]
+}

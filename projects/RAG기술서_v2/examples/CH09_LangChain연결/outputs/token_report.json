@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "total_calls": 4,
+    "total_prompt_tokens": 42,
+    "total_completion_tokens": 43,
+    "total_tokens": 85,
+    "estimated_cost_krw": 0.0,
+    "by_model": {
+      "deepseek-r1": {
+        "calls": 4,
+        "prompt_tokens": 42,
+        "completion_tokens": 43,
+        "total_tokens": 85
+      }
+    }
+  },
+  "records": [
+    {
+      "model": "deepseek-r1",
+      "prompt_tokens": 10,
+      "completion_tokens": 17,
+      "total_tokens": 27,
+      "timestamp": 1772030343.327761
+    },
+    {
+      "model": "deepseek-r1",
+      "prompt_tokens": 10,
+      "completion_tokens": 8,
+      "total_tokens": 18,
+      "timestamp": 1772030343.3314419
+    },
+    {
+      "model": "deepseek-r1",
+      "prompt_tokens": 12,
+      "completion_tokens": 11,
+      "total_tokens": 23,
+      "timestamp": 1772030343.335001
+    },
+    {
+      "model": "deepseek-r1",
+      "prompt_tokens": 10,
+      "completion_tokens": 7,
+      "total_tokens": 17,
+      "timestamp": 1772030343.33884
+    }
+  ]
+}

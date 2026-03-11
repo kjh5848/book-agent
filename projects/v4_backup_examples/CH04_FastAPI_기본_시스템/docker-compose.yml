@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: connect_hr_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: connect_hr
+      POSTGRES_USER: connect_hr
+      POSTGRES_PASSWORD: connect_hr_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./data/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U connect_hr -d connect_hr"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pg_data:
+    driver: local

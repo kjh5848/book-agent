@@ -1,86 +1,175 @@
-# 문체 및 톤앤매너 규칙
+# Writing Style and Tone Rules
 
-## 1. 집필 핵심 전략
+## 1. Core Writing Strategy
+<!-- 집필 핵심 전략 -->
 
-본 도서는 단순한 매뉴얼을 넘어 **'독자의 문제를 해결하는 실무 지침서'** 가 되어야 합니다.
+This book must go beyond a simple manual to become a **'practical guide that solves readers' problems'**.
 
-### 이론과 실습의 황금비율
+### The Golden Ratio of Theory and Practice
+<!-- 이론과 실습의 황금비율 -->
 
-- 각 장(Chapter)은 **[개념 이해] → [따라하기] → [원리 분석]** 의 3단계 구성을 준수하십시오.
+- Each chapter must follow the 3-step structure of **[Concept Understanding] → [Hands-on] → [Principle Analysis]**.
 
-### 독자 중심의 학습 곡선
+### Reader-Centered Learning Curve
+<!-- 독자 중심의 학습 곡선 -->
 
-- **심화**: "실무에선 이렇게 막아야지." (예외 처리, 최적화)
+- **Advanced**: "In production, you need to guard against this." (exception handling, optimization)
 
-## 2. 설명의 기술
+## 2. The Art of Explanation
+<!-- 설명의 기술 -->
 
-- **원칙**: 모든 코드, 명령어, 구조도에는 **"왜 이렇게 했는지(Why)"** 에 대한 설명이 반드시 포함되어야 합니다.
+- **Principle**: Every code snippet, command, and diagram **must include an explanation of "Why it was done this way"**.
 - **Good Patterns**:
-  - "이 폴더 구조를 선택한 이유는 나중에 메타데이터로 활용하기 위함입니다."
-  - "이 옵션을 켠 이유는 메모리 누수를 방지하기 위해서입니다."
+  - "This folder structure was chosen so that it can later be used as metadata."
+  - "This option was enabled to prevent memory leaks."
 - **Bad Patterns**:
-  - (설명 없이 코드만 덩그러니 있는 경우)
-  - "다음 명령어를 입력하세요." (이유 설명 부재)
+  - (Code block present with no explanation)
+  - "Enter the following command." (no explanation of the reason)
 
-## 3. 핵심 어조
+## 3. Core Tone
+<!-- 핵심 어조 -->
 
-- **권위 있는 하십시오체**: 전문 기술 서적의 신뢰감을 위해 정중하고 절제된 말투(~합니다, ~입니다)를 사용합니다.
-- **확신 있는 단정적 서술**: "~인 것 같다", "~해 보인다" 등 추측성 표현을 금지합니다.
-- **친절한 멘토링**: 독자를 함께 프로젝트를 완수하는 동료로 대우하며 실질적인 해결책을 제시합니다.
+- **Authoritative formal register**: Use polite and restrained language (~합니다, ~입니다) for the credibility of a professional technical book.
+- **Confident declarative statements**: Speculative expressions such as "it seems like" or "it appears to be" are prohibited.
+- **Friendly mentoring**: Treat readers as colleagues working together to complete a project, and provide practical solutions.
 
-## 4. 문체 및 편집 규칙
+## 4. Style and Editing Rules
+<!-- 문체 및 편집 규칙 -->
 
-- **능동형 중심 서술**: 주체가 명확한 능동형 문장을 사용합니다. (예: "시스템이 데이터를 수집합니다")
-- **전문 용어 영문 병기**: 전문 용어는 `한국어(English)` 형식으로 최초 1회만 표기합니다. (예: 검색 증강 생성(RAG))
-- **단계적 절차 표현**: 순서가 중요한 내용은 반드시 **숫자 목록(1., 2., 3.)** 을 사용합니다.
-- **이모지 사용 금지**: 가독성과 전문성을 위해 본문 내 이모지 사용을 금지합니다.
-- **이미지 캡션 스타일**: 이미지 하단에 `*그림 X-Y: 설명*` 형식으로 캡션을 작성합니다.
+- **Active voice**: Use active sentences with a clear subject. (e.g., "The system collects data.")
+- **English annotation of technical terms**: Technical terms are annotated in `Korean(English)` format only on first appearance. (e.g., 검색 증강 생성(RAG))
+- **Step-by-step procedure expression**: For content where order matters, always use a **numbered list (1., 2., 3.)**.
+- **No emoji**: Emoji are prohibited in body text for readability and professionalism.
+- **Image caption style**: Write captions below images in the format `*Figure X-Y: description*`.
 
-## 5. 강조 표기 규칙 (Strict Spacing)
+## 5. Bold Text Rules (Strict Spacing)
+<!-- 강조 표기 규칙 -->
 
-볼드체(`**`) 사용 시 **앞뒤 공백** 을 반드시 포함합니다.
+When using bold text (`**`), **spaces before and after** must be included.
 
-- 한국어와 영문 병기(`**용어(English)**`)에서 조사가 붙을 경우 렌더링이 깨지는 것을 방지합니다.
-- 예시: `**컨텍스트 주입(Context Injection)** 이라 합니다.` (O)
-- 반례: `**컨텍스트 주입(Context Injection)**이라 합니다.` (X)
-- 문장당 볼딩은 1~2개 이하로 제한합니다.
+- This prevents rendering issues when a particle is attached to a bold Korean-English annotation (`**term(English)**`).
+- Example: `**컨텍스트 주입(Context Injection)** 이라 합니다.` (correct)
+- Counter-example: `**컨텍스트 주입(Context Injection)**이라 합니다.` (incorrect)
+- Limit bold usage to 1–2 instances per sentence.
 
-## 6. 지양해야 할 표현
+## 6. Expressions to Avoid
+<!-- 지양해야 할 표현 -->
 
-- **상투적 비유 금지**: "긴 여정", "마법 같은", "첫걸음" → "과정", "절차", "시작" 등 건조하고 명확한 단어 사용.
-- **주관적 조사 금지**: "하필", "하필이면" 등 부정적 뉘앙스 단어 사용 금지.
-- **시의성 의존 표현 금지**: "최신", "요즘 뜨는" → 구체적인 버전이나 연도 표기.
-- **불필요한 부연 금지**: "(=Look up)" 같은 괄호 설명 배제. 전문 용어는 최초 1회 정의 후 그대로 사용.
+- **No cliche analogies**: "long journey", "magic-like", "first steps" → use dry and clear words such as "process", "procedure", "start".
+- **No subjective interjections**: Avoid negative-nuance words such as "하필" or "하필이면".
+- **No time-dependent expressions**: "latest", "trending these days" → use specific version or year.
+- **No unnecessary parenthetical explanations**: Exclude parenthetical notes like "(=Look up)". Define technical terms once on first use and then use them as-is.
 
-## 7. 독자 수준별 집필 심도 (Reader Level Adaptive Writing)
+### 6.1. Prohibited Tone Patterns
+<!-- 금지 말투 패턴 — 독자를 가르치려 하지 않는다 -->
 
-`outline/draft.md`에 명시된 독자 수준에 따라 아래 기준으로 집필 심도를 조정한다.
+독자는 동료이지 학생이 아니다. 아래 패턴은 모두 금지한다.
 
-### 7.1. 수준별 비교
+**① 훈계·깨달음 강요**
+- Bad: "단순한 방법의 결과를 본 후에야 더 복잡한 방법의 가치를 이해할 수 있습니다."
+- Bad: "이 한계를 몸으로 체감해야만 필요성이 설득력 있게 다가옵니다."
+- Bad: "~해야 한계를 안다", "~해봐야 알 수 있다"
+- Good: 사실만 서술한다. "Python 파싱은 이미지형 PDF에서 텍스트 손실이 발생한다. Vision LLM은 이 영역을 보완한다."
 
-| 항목 | 초급 | 중급 | 고급 |
-|------|------|------|------|
-| 개념 설명 방식 | 일상 비유 + 단계별 원리 | 간결 원리 설명 | 내부 동작·엣지케이스 |
-| Why 설명 분량 | 코드 1블록당 5줄 이상 | 코드 1블록당 3줄 | 핵심 1줄 |
-| 비유 사용 | 적극 활용 | 필요 시만 | 최소화 |
-| 사전 지식 가정 | 없음 (용어 첫 등장마다 설명) | 기본 Python·Linux 가정 | 해당 기술 경험 가정 |
-| 실습 안내 | 명령어 1개씩 + 결과 설명 | 묶어서 흐름 설명 | 결과만 제시 |
+**② "이것이 바로...이유입니다" 패턴**
+- Bad: "이것이 바로 Step 2가 필요한 이유입니다."
+- Good: "Step 2는 이런 이미지형 PDF를 처리하기 위한 단계입니다."
 
-### 7.2. 초급 집필 원칙 (이 프로젝트 기본값)
+**③ "~하는 이유는...때문입니다" 과잉 설명**
+- Bad: "CLI로 먼저 검증하는 이유는 웹 UI 개발 전에 문제를 발견하기 위해서입니다."
+- Good: 이유를 말해야 한다면 한 문장으로 간결하게. 자명한 이유는 생략한다.
 
-초급 독자 대상 책에서는 아래를 반드시 준수한다.
+**④ 습관·태도 훈계**
+- Bad: "문제를 조기 발견하는 습관이 중요하다."
+- Bad: "~를 확인하는 습관을 들이십시오."
+- Good: 사실과 기준만 제시한다. "유사도 80% 이상이면 정상이다."
 
-- **비유 우선**: 새 개념 소개 시 반드시 일상 비유로 먼저 설명한다.
-  - 예: "벡터 유사도 검색은 도서관에서 '비슷한 주제의 책'을 찾는 것과 같습니다."
-- **두 줄 정의 규칙**: 전문 용어 첫 등장 시 한국어 정의(1줄) + 비유(1줄)로 설명한다.
-- **Why 먼저 Why 나중 금지**: "이렇게 하십시오" 이후 반드시 "왜냐하면 ~"을 붙인다.
-- **점진적 공개**: 코드의 복잡한 부분을 한 번에 다 보여주지 않는다. 간단한 버전 먼저, 완전한 버전 나중.
-- **자유로운 개념 이미지 활용**: 독자의 이해를 돕는 개념 이미지가 필요하다고 판단되면 `image.md`의 플레이스홀더를 적극 삽입한다. 에이전트는 이 판단에 자유도를 갖는다.
+**⑤ 용어는 정의 먼저, 적용 나중에**
+- Bad: "Vision LLM은 PDF 각 페이지를 PNG로 변환한 뒤..." (정의 없이 바로 사용법)
+- Good: "Vision LLM은 이미지를 입력으로 받을 수 있는 멀티모달 LLM이다." → 그 다음에 PDF 적용 설명
 
-### 7.3. 비유 작성 시 주의사항
+**⑥ 영어 전문용어 그대로 노출 금지**
+- Bad: "URL-safe하게 유지합니다", "department 필드를 추가합니다"
+- Good: 한국어로 풀어쓰거나, 첫 등장 시 병기한다. "부서(department) 필드", "공백 대신 언더스코어를 사용합니다"
 
-비유는 도움이 되지만, 아래 패턴은 금지한다.
+**⑦ 과도한 챕터 간 참조**
+- 한 섹션에서 다른 챕터를 2회 이상 언급하지 않는다.
+- Bad: "CH06에서 구축한 VectorDB를 CH07에서 연결하고 CH10에서 튜닝합니다."
+- Good: 필요한 참조만 최소 1회. "다음 챕터에서 RAG 체인과 연결합니다."
 
-- **상투적 비유 금지**: "마법 같은", "블랙박스" → 구체적인 동작 설명으로 대체
-- **오해 유발 비유 금지**: 비유가 기술의 실제 동작을 왜곡하면 안 된다.
-- **비유 남용 금지**: 한 페이지에 3개 이상의 비유 사용 금지. 기술 설명이 비유에 묻히지 않도록 한다.
+## 7. Reader-Level Adaptive Writing
+<!-- 독자 수준별 집필 심도 -->
+
+Adjust the writing depth according to the reader level specified in `outline/draft.md`.
+
+### 7.1. Comparison by Level
+<!-- 수준별 비교 -->
+
+| Item | Beginner | Intermediate | Advanced |
+|------|----------|--------------|----------|
+| Concept explanation style | Everyday analogy + step-by-step principles | Concise principle explanation | Internal behavior/edge cases |
+| Why explanation length | 5+ lines per code block | 3 lines per code block | 1 core line |
+| Analogy usage | Actively use | Only when needed | Minimize |
+| Prior knowledge assumption | None (explain every term on first appearance) | Basic Python/Linux assumed | Experience with the technology assumed |
+| Practice guidance | 1 command at a time + result explanation | Grouped flow explanation | Result only |
+
+### 7.2. Beginner Writing Principles (Default for this project)
+<!-- 초급 집필 원칙 -->
+
+When writing for beginner readers, the following must be followed.
+
+- **Analogy first**: When introducing a new concept, always explain with an everyday analogy first.
+  - Example: "Vector similarity search is like finding 'books on similar topics' in a library."
+- **Two-line definition rule**: When a technical term appears for the first time, explain it with a Korean definition (1 line) + analogy (1 line).
+- **Why always follows**: After "Do it this way," always attach "because ~".
+- **Progressive disclosure**: Do not show all complex parts of the code at once. Simple version first, complete version later.
+- **Free use of concept images**: When a concept image would help reader comprehension, actively insert placeholders from `image.md`. Agents have freedom in making this judgment.
+
+### 7.3. Precautions When Writing Analogies
+<!-- 비유 작성 시 주의사항 -->
+
+Analogies are helpful, but the following patterns are prohibited.
+
+- **No cliche analogies**: "magic-like", "black box" → replace with concrete operation explanations
+- **No misleading analogies**: Analogies must not distort the actual behavior of the technology.
+- **No analogy overuse**: No more than 3 analogies per page. Technical explanation must not be buried by analogies.
+
+## 8. Execution Result Writing Rules
+<!-- 실행 결과 작성 규칙 -->
+
+LLM responses are non-deterministic. The following rules apply when writing about execution results.
+
+### 8.1. Absolute Prohibition: Fabricated Output
+<!-- 절대 금지: 조작된 출력 -->
+
+- **Never fabricate or predict** specific LLM output text in the chapter manuscript.
+- LLM responses vary with every execution — specific numbers, sentence structures, and wording all change.
+- Do not write text blocks pretending to be LLM output (e.g., "김철수 사원의 남은 연차는 6일입니다" as if the LLM generated it).
+- Do not invent specific metric values (e.g., "유사도: 0.943", "매출 합계: 260.5M") that would appear in LLM responses.
+
+### 8.2. Use Screenshots Instead
+<!-- 스크린샷으로 대체 -->
+
+- For LLM execution results, always use **screenshot images** captured from actual runs.
+- Insert screenshots with `![description](../assets/CH{N}/{NN}_{description}.png)` format.
+- If a screenshot is not yet available, insert a placeholder: `<!-- [CAPTURE NEEDED: {description}] -->`.
+- One screenshot per execution step — do not duplicate.
+
+### 8.3. Writing Descriptions Around Results
+<!-- 결과 주변 서술 방법 -->
+
+- **Before execution**: Describe what the command does and what to observe, not what the output will say.
+  - Good: "실행하면 LLM이 사내 정보 없이 답변을 생성합니다. 어떤 답변이 나오는지 확인하십시오."
+  - Bad: "실행하면 다음과 같은 답변이 출력됩니다: ..."
+- **After screenshot**: Describe the **pattern** to observe, not the specific content.
+  - Good: "LLM이 그럴듯하지만 실제와 다른 정보를 생성했습니다. 이것이 환각입니다."
+  - Bad: "LLM이 '남은 연차는 10일입니다'라고 답변했습니다."
+- **Variability notice**: When LLM output is shown, add a note that responses differ per run.
+  - Example: `> **참고:** LLM 응답은 실행할 때마다 달라집니다. 화면과 다른 결과가 나와도 정상입니다.`
+
+### 8.4. Non-LLM Execution Results
+<!-- LLM이 아닌 실행 결과 -->
+
+- Deterministic outputs (DB queries, file listings, version checks) CAN be written as text blocks.
+- But keep them short — only the essential lines. Use `...` to truncate long outputs.
+- If a deterministic output includes computed values from LLM-dependent data, treat it as LLM output (non-deterministic).

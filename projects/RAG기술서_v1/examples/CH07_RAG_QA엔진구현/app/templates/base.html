@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}RAG Q&A 엔진{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/admin.css') }}">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">RAG Q&A 엔진</div>
+        <div class="nav-title">메뉴</div>
+        <a class="nav-link {% if active_page == 'dashboard' %}active{% endif %}" href="/admin/dashboard">대시보드</a>
+        <a class="nav-link {% if active_page == 'qa' %}active{% endif %}" href="/admin/qa">Q&amp;A 채팅</a>
+    </aside>
+
+    <main class="content">
+        <div class="page-header">
+            <div class="page-title">{% block page_title %}{% endblock %}</div>
+            <div class="page-subtitle">{% block page_subtitle %}{% endblock %}</div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

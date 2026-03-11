@@ -1,14 +1,17 @@
-# Python 에러 처리 규칙
+# Python Error Handling Rules
 
-## 1. 기본 원칙
+## 1. Basic Principles
+<!-- 예제 코드에서도 최소한의 에러 핸들링을 포함하는 원칙 -->
 
-- 예제 코드에서도 최소한의 에러 핸들링을 포함합니다.
-- 독자가 실행 시 만날 수 있는 에러를 미리 잡아줍니다.
-- 에러 메시지는 **독자 친화적 한국어** 로 작성합니다.
+- Include at minimum basic error handling even in example code.
+- Catch errors that readers may encounter when running the code.
+- Error messages should be written in **reader-friendly Korean**.
 
-## 2. 필수 에러 처리 패턴
+## 2. Required Error Handling Patterns
+<!-- 필수 에러 처리 패턴 -->
 
-### 외부 서비스 연결
+### External Service Connection
+<!-- 외부 서비스 연결 에러 처리 -->
 
 ```python
 try:
@@ -18,7 +21,8 @@ except ConnectionError:
     sys.exit(1)
 ```
 
-### 환경 변수 누락
+### Missing Environment Variables
+<!-- 환경 변수 누락 에러 처리 -->
 
 ```python
 import os
@@ -30,7 +34,8 @@ if not api_key:
     sys.exit(1)
 ```
 
-### 파일 경로 오류
+### File Path Error
+<!-- 파일 경로 오류 처리 -->
 
 ```python
 from pathlib import Path
@@ -42,12 +47,13 @@ if not file_path.exists():
     sys.exit(1)
 ```
 
-## 3. 코드 검증 체크리스트
+## 3. Code Verification Checklist
+<!-- 코드 검증 체크리스트 -->
 
-- [ ] 가상환경(venv) 신규 생성 후 `requirements.txt`만으로 설치 성공하는가
-- [ ] `main.py` 정상 실행 및 예상 결과와 일치하는가
-- [ ] 필수 환경 변수 누락 시 친절한 에러 메시지가 출력되는가
-- [ ] 잘못된 파일 경로 입력 시 크래시 없이 처리되는가
-- [ ] 본문 코드 스니펫과 실제 소스 코드가 100% 일치하는가
-- [ ] Windows / macOS 양쪽 실행 명령어가 검증되었는가
-- [ ] 산출물: `verify_report.md` (수정 내역 + 최종 상태)
+- [ ] Does installation succeed with only `requirements.txt` after creating a fresh virtual environment (venv)?
+- [ ] Does `main.py` run normally and match the expected output?
+- [ ] Is a friendly error message displayed when a required environment variable is missing?
+- [ ] Is an invalid file path handled gracefully without crashing?
+- [ ] Do the code snippets in the body match the actual source code 100%?
+- [ ] Have execution commands been verified on both Windows and macOS?
+- [ ] Output: `verify_report.md` (modification history + final status)

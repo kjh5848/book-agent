@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "question": "연차 신청은 며칠 전에 해야 하나요?",
+    "expected_keywords": ["7일", "사전", "신청"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 2,
+    "question": "1년 미만 근무자의 연차는 어떻게 발생하나요?",
+    "expected_keywords": ["매월", "1일", "유급"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 3,
+    "question": "반차 신청은 며칠 전에 해야 하나요?",
+    "expected_keywords": ["3일", "반차", "신청"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 4,
+    "question": "병가를 3일 이상 사용할 때 필요한 서류는 무엇인가요?",
+    "expected_keywords": ["진단서", "제출", "병가"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 5,
+    "question": "배우자 출산 휴가는 며칠인가요?",
+    "expected_keywords": ["10일", "출산", "유급"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 6,
+    "question": "본인 결혼 경조사 휴가는 며칠인가요?",
+    "expected_keywords": ["5일", "결혼", "경조사"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 7,
+    "question": "연말 결산 기간에 연차를 사용할 수 있나요?",
+    "expected_keywords": ["12월", "제한", "결산"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 8,
+    "question": "미사용 연차는 다음 해로 이월되나요?",
+    "expected_keywords": ["이월", "수당", "미사용"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 9,
+    "question": "긴급 사유로 당일 연차를 신청할 수 있나요?",
+    "expected_keywords": ["당일", "오전 9시", "긴급"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 10,
+    "question": "육아 휴직은 최대 얼마나 사용할 수 있나요?",
+    "expected_keywords": ["1년", "육아", "휴직"],
+    "relevant_docs": ["leave_rules.txt"],
+    "category": "leave_policy"
+  },
+  {
+    "id": 11,
+    "question": "급여는 매월 몇 일에 지급되나요?",
+    "expected_keywords": ["25일", "급여", "지급"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 12,
+    "question": "수습 기간 동안 급여는 얼마나 받나요?",
+    "expected_keywords": ["80%", "수습", "급여"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 13,
+    "question": "성과급은 언제 지급되나요?",
+    "expected_keywords": ["7월", "1월", "성과급"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 14,
+    "question": "자기계발비는 연간 얼마까지 지원되나요?",
+    "expected_keywords": ["100만원", "자기계발", "연간"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 15,
+    "question": "사원에서 주임으로 승진하려면 몇 년이 필요한가요?",
+    "expected_keywords": ["2년", "사원", "주임"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 16,
+    "question": "재택 근무는 일주일에 몇 번 가능한가요?",
+    "expected_keywords": ["2일", "재택", "팀장"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 17,
+    "question": "유연 근무제에서 코어 타임은 몇 시부터 몇 시까지인가요?",
+    "expected_keywords": ["10:00", "16:00", "코어"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 18,
+    "question": "S등급 성과급은 기본급의 몇 퍼센트인가요?",
+    "expected_keywords": ["200%", "S등급", "성과급"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 19,
+    "question": "수습 기간은 얼마나 되나요?",
+    "expected_keywords": ["3개월", "수습", "기간"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 20,
+    "question": "승진은 언제 발령되나요?",
+    "expected_keywords": ["1월", "승진", "발령"],
+    "relevant_docs": ["hr_policy.txt"],
+    "category": "hr_policy"
+  },
+  {
+    "id": 21,
+    "question": "비밀번호는 몇 일마다 변경해야 하나요?",
+    "expected_keywords": ["90일", "비밀번호", "변경"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 22,
+    "question": "계정이 잠기면 어디에 문의해야 하나요?",
+    "expected_keywords": ["IT팀", "내선 1234", "잠김"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 23,
+    "question": "재택 근무 시 VPN은 필수인가요?",
+    "expected_keywords": ["VPN", "필수", "재택"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 24,
+    "question": "이메일로 첨부할 수 있는 파일 크기 제한은 얼마인가요?",
+    "expected_keywords": ["10MB", "첨부", "이메일"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 25,
+    "question": "IT 헬프데스크 운영 시간은 언제인가요?",
+    "expected_keywords": ["09:00", "18:00", "헬프데스크"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 26,
+    "question": "화면 잠금 단축키는 무엇인가요?",
+    "expected_keywords": ["Windows+L", "Command", "잠금"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 27,
+    "question": "MFA에 사용할 수 있는 앱은 무엇인가요?",
+    "expected_keywords": ["Google Authenticator", "Microsoft Authenticator", "MFA"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 28,
+    "question": "시스템 정기 점검은 언제 진행되나요?",
+    "expected_keywords": ["일요일", "02:00", "점검"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 29,
+    "question": "로그인 몇 번 실패하면 계정이 잠기나요?",
+    "expected_keywords": ["5회", "연속", "잠김"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  },
+  {
+    "id": 30,
+    "question": "이메일 저장 용량은 얼마인가요?",
+    "expected_keywords": ["50GB", "저장", "용량"],
+    "relevant_docs": ["it_guide.txt"],
+    "category": "it_guide"
+  }
+]

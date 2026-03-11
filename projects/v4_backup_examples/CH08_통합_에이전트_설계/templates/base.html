@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}ConnectHR CH08{% endblock %}</title>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+  <!-- 사이드바 (240px 고정) -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">&#9632;</span>
+      <span class="sidebar-title">ConnectHR</span>
+      <span class="sidebar-badge">CH08</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="/chat" class="nav-link {% block nav_chat %}{% endblock %}">
+        <span class="nav-icon">&#128172;</span> 통합 채팅
+      </a>
+      <a href="/health" class="nav-link" target="_blank">
+        <span class="nav-icon">&#10003;</span> 상태 확인
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <p class="sidebar-footer-text">RAG 기술서 Chapter 08</p>
+      <p class="sidebar-footer-text">정형 + 비정형 통합 에이전트</p>
+    </div>
+  </aside>
+
+  <!-- 메인 컨텐츠 -->
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

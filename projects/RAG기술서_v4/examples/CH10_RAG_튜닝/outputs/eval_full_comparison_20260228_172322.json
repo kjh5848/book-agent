@@ -1,0 +1,28 @@
+{
+  "experiment_name": "full_comparison",
+  "timestamp": "20260228_172322",
+  "metrics": {
+    "before": {
+      "precision@3": 0.0,
+      "precision@5": 0.0,
+      "precision@10": 0.0,
+      "recall@3": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0
+    },
+    "after": {
+      "precision@3": 0.3333333333333333,
+      "precision@5": 0.2,
+      "precision@10": 0.1,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0
+    },
+    "hallucination": {
+      "before": 1.0,
+      "after": 1.0
+    }
+  }
+}

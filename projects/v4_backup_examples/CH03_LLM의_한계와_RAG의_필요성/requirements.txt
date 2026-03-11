@@ -1,0 +1,11 @@
+# 환경 변수 로드
+python-dotenv==1.0.1
+
+# HTTP 요청 (Ollama API 직접 호출)
+requests==2.32.3
+
+# 벡터 데이터베이스 (인메모리 모드 사용)
+chromadb==0.5.23
+
+# 한국어 임베딩 모델
+sentence-transformers==3.3.1

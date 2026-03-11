@@ -1,75 +1,94 @@
-# Mermaid 다이어그램 가이드
+# Mermaid Diagram Guide
 
-## 1. 기본 원칙
+## 1. Basic Principles
+<!-- Mermaid 다이어그램 작성의 기본 원칙 -->
 
-- 하나의 다이어그램에 노드가 **7개를 넘지 않도록** 단순화하여 가독성을 확보합니다.
-- `graph` 대신 최신 문법인 **`flowchart`** 키워드를 사용합니다. (서브그래프 타이틀 호환성 우수)
+- Keep the number of nodes in a single diagram to **7 or fewer** for readability.
+- Use the modern **`flowchart`** keyword instead of `graph`. (better subgraph title compatibility)
 
-## 2. 특수문자 처리 규칙
+## 2. Special Character Handling Rules
+<!-- 괄호, 중괄호, 슬래시 등 특수문자 처리 규칙 -->
 
-괄호`()`, 중괄호`{}`, 대괄호`[]`, 슬래시`/`, 줄바꿈`<br/>` 등이 포함된 레이블은 반드시 **쌍따옴표(`"`)** 로 감쌉니다.
+Labels containing parentheses `()`, braces `{}`, brackets `[]`, slashes `/`, line breaks `<br>`, etc. must be wrapped in **double quotes (`"`)**.
 
-### 노드 레이블
+### Line Breaks
+<!-- 노드 레이블 내 줄바꿈 규칙 -->
 
-```
-Bad:  A[Router(판단)]        → 괄호 인식 오류 발생
-Good: A["Router(판단)"]      → 안전
-```
-
-### 연결선 텍스트 (핵심)
-
-연결선 텍스트에 특수문자가 포함되면 파싱 에러가 빈번히 발생합니다.
-**반드시 `A -- "텍스트" --> B` 형식을 사용**합니다.
+Use `<br>` for line breaks inside node labels. **Never use `\n`** — Mermaid does not support `\n`.
 
 ```
-Bad:  A -->|처리(Process)| B
-Bad:  A -->|"처리(Process)"| B
-Good: A -- "처리(Process)" --> B
+Bad:  A["Line 1\nLine 2"]        → \n is not rendered as a line break
+Good: A["Line 1<br>Line 2"]      → correctly renders two lines
 ```
 
-### 점선 / 굵은선
+### Node Labels
+<!-- 노드 레이블 규칙 -->
+
+```
+Bad:  A[Router(Decision)]        → parentheses cause parsing error
+Good: A["Router(Decision)"]      → safe
+```
+
+### Edge Text (Critical)
+<!-- 연결선 텍스트 핵심 규칙 -->
+
+Edge text containing special characters frequently causes parsing errors.
+**Always use the `A -- "text" --> B` format**.
+
+```
+Bad:  A -->|Process(Core)| B
+Bad:  A -->|"Process(Core)"| B
+Good: A -- "Process(Core)" --> B
+```
+
+### Dashed / Bold Lines
+<!-- 점선과 굵은선 규칙 -->
 
 ```mermaid
-A -. "점선 텍스트(예시)" .-> B
-A == "굵은선 텍스트(예시)" ==> B
+A -. "dashed text (example)" .-> B
+A == "bold text (example)" ==> B
 ```
 
-## 3. 서브그래프 규칙
+## 3. Subgraph Rules
+<!-- 서브그래프 작성 규칙 -->
 
-- ID에는 공백이나 특수문자를 쓰지 않습니다.
-- 타이틀 표기 시 대괄호 문법보다 표준 문법을 권장합니다.
-
-```
-Safe: subgraph SubSystem ["시스템 이름"]
-```
-
-## 4. 볼드체·이탤릭체 혼용 절대 금지 (치명적 파싱 오류)
-
-쌍따옴표 내부 또는 외부에 마크다운 볼드체(`**`)나 이탤릭체(`*`)를 절대 사용하지 않습니다.
-이는 Mermaid 파싱 엔진이 `*`를 별도 기호로 해석하여 렌더링 실패를 유발하는 가장 흔한 원인입니다.
+- Do not use spaces or special characters in IDs.
+- The standard syntax is recommended over bracket syntax for title notation.
 
 ```
-✅ 올바른 예시: subgraph step1 ["Step 1: LLM 단독 실행 (오류)"]
-❌ 잘못된 예시: subgraph step1 [**"Step 1: LLM 단독 실행 (오류)"**]
-❌ 잘못된 예시: A["**핵심 개념**"] --> B
+Safe: subgraph SubSystem ["System Name"]
 ```
 
-이 규칙은 서브그래프 타이틀, 노드 레이블, 연결선 텍스트 모두에 동일하게 적용됩니다.
+## 4. Bold/Italic Mixing Absolutely Prohibited (Critical Parsing Error)
+<!-- 쌍따옴표 내외부에 볼드체/이탤릭체 마크다운 절대 금지 -->
 
-## 4. 올바른 예시
+Never use Markdown bold (`**`) or italic (`*`) inside or outside double quotes.
+This is the most common cause of rendering failure, as the Mermaid parsing engine interprets `*` as a separate symbol.
+
+```
+Correct: subgraph step1 ["Step 1: LLM Standalone Run (Error)"]
+Wrong:   subgraph step1 [**"Step 1: LLM Standalone Run (Error)"**]
+Wrong:   A["**Core Concept**"] --> B
+```
+
+This rule applies equally to subgraph titles, node labels, and edge text.
+
+## 4. Correct Examples
+<!-- 올바른 Mermaid 예시 -->
 
 ```mermaid
 flowchart LR
-    A["사용자 질문"] -- "1. 질의" --> B["AI 에이전트"]
-    B -- "2. 검색(RAG)" --> C["문서 DB"]
-    C -- "3. 컨텍스트 반환" --> B
-    B -- "4. 응답 생성" --> D["최종 답변"]
+    A["User Question"] -- "1. Query" --> B["AI Agent"]
+    B -- "2. Search(RAG)" --> C["Document DB"]
+    C -- "3. Return Context" --> B
+    B -- "4. Generate Response" --> D["Final Answer"]
 ```
 
-## 5. 체크리스트
+## 5. Checklist
+<!-- Mermaid 다이어그램 작성 체크리스트 -->
 
-- [ ] `flowchart` 키워드를 사용했는가? (`graph` 아님)
-- [ ] 괄호가 포함된 노드 레이블에 쌍따옴표를 적용했는가?
-- [ ] 연결선 텍스트에 `-- "텍스트" -->` 형식을 사용했는가?
-- [ ] 노드 수가 7개 이하인가?
-- [ ] 쌍따옴표 내부·외부에 `**` 또는 `*` 볼드/이탤릭 마크다운이 없는가?
+- [ ] Is the `flowchart` keyword used? (not `graph`)
+- [ ] Are node labels containing parentheses wrapped in double quotes?
+- [ ] Is the `-- "text" -->` format used for edge text?
+- [ ] Is the number of nodes 7 or fewer?
+- [ ] Are there no `**` or `*` bold/italic Markdown inside or outside double quotes?

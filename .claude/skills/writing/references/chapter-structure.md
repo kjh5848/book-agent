@@ -1,88 +1,99 @@
-# 챕터 구조 템플릿
+# Chapter Structure Template
 
-## 1. 필수 4단계 구조
+## 1. Required 4-Step Structure
+<!-- 모든 챕터가 반드시 준수해야 하는 4단계 구조 -->
 
-모든 챕터는 아래 4단계 구조를 반드시 준수합니다.
+All chapters must follow the 4-step structure below without exception.
 
-### 1단계: 헤더 및 도입부
+### Step 1: Header and Introduction
+<!-- 1단계: 헤더 및 도입부 -->
 
 ```markdown
-# {챕터번호}. {챕터 제목}
+# {Chapter Number}. {Chapter Title}
 
-이 장에서는 {핵심 주제}를 학습합니다. {1~2문장 요약}
+In this chapter, you will learn {core topic}. {1–2 sentence summary}
 ```
 
-### 2단계: 개념 설명
+### Step 2: Concept Explanation
+<!-- 2단계: 개념 설명 -->
 
-- Mermaid 도식을 활용하여 아키텍처나 원리를 먼저 설명합니다.
-- 독자가 전체 그림을 머릿속에 그린 후 실습에 들어가도록 유도합니다.
+- Use Mermaid diagrams to explain architecture or principles first.
+- Guide readers to form an overall picture in their minds before beginning hands-on practice.
 
-### 3단계: 단계별 실습
+### Step 3: Step-by-Step Practice
+<!-- 3단계: 단계별 실습 -->
 
-- 명확한 코드 블록과 라인별 주석을 포함합니다.
-- 각 코드 블록 아래에 `#### 코드 워크플로우 (Code Workflow)` 섹션을 배치합니다.
+- Include clear code blocks with line-by-line comments.
+- **Code Quoting Rule**: Show only the core logic (10–20 lines) in the book text. Do NOT paste entire files. Add `> 전체 코드: \`src/{filename}.py\`` below each code block to direct readers to the full source. Imports, boilerplate, and error handling belong in examples/, not in the book.
+- Place a `#### Code Workflow` section below each code block.
 
-### 4단계: 마무리
+### Step 4: Summary
+<!-- 4단계: 마무리 -->
 
 ```markdown
-## {마지막 번호}. 정리하며
+## {Last Number}. Summary
 
-- **핵심 결론 1**: 부연 설명
-- **핵심 결론 2**: 부연 설명
-- **핵심 결론 3**: 부연 설명
+- **Key Conclusion 1**: Elaboration
+- **Key Conclusion 2**: Elaboration
+- **Key Conclusion 3**: Elaboration
 ```
 
-## 2. 마무리 규칙 (Chapter Conclusion Rule)
+## 2. Chapter Closing Rules
+<!-- 챕터 마무리 규칙 -->
 
-- **섹션 제목**: 각 장의 마지막 섹션 제목은 반드시 **"정리하며"** 로 통일합니다. (예: `## 5. 정리하며`)
-- **개조식(Bullet Points)**: 줄글로 나열하지 말고, 핵심 내용을 불렛 포인트로 정리하십시오.
-- **두괄식(Deductive)**: 각 항목의 첫 문장에 핵심 결론을 먼저 제시하고, 부연 설명은 뒤에 덧붙이십시오.
+- **Section title**: The last section title of each chapter must always be **"정리하며"** (e.g., `## 5. 정리하며`).
+- **Bullet Points**: Do not list in prose; summarize key content in bullet points.
+- **Deductive structure**: Present the key conclusion first in each item, then add elaboration afterward.
 
-## 3. 마크다운 골격 예시
+## 3. Markdown Skeleton Example
+<!-- 마크다운 골격 예시 -->
 
 ```markdown
-# {N}. {챕터 제목}
+# {N}. {Chapter Title}
 
-이 장에서는 ...를 학습합니다.
+In this chapter, you will learn about...
 
-## 1. {개념 섹션}
+## 1. {Concept Section}
 
-{Mermaid 다이어그램}
+{Mermaid diagram}
 
-{개념 설명}
+{Concept explanation}
 
-## 2. {실습 섹션}
+## 2. {Practice Section}
 
-{코드 블록}
+{Code block}
 
-#### 코드 워크플로우 (Code Workflow)
+#### Code Workflow
 
-1. **입력(Input)**: ...
-2. **처리(Process)**: ...
-3. **출력(Output)**: ...
+1. **Input**: ...
+2. **Process**: ...
+3. **Output**: ...
 
-> **팁: 제목**
-> 유용한 정보
+> **팁: Title**
+> Useful information
 
-## 3. {심화 섹션}
+## 3. {Advanced Section}
 
-{추가 실습 또는 심화 내용}
+{Additional practice or advanced content}
 
 ## 4. 정리하며
 
-- **핵심 1**: 설명
-- **핵심 2**: 설명
-- **핵심 3**: 설명
+- **Key Point 1**: Explanation
+- **Key Point 2**: Explanation
+- **Key Point 3**: Explanation
 ```
 
-## 4. 품질 체크리스트
+## 4. Quality Checklist
+<!-- 집필 완료 전 반드시 체크해야 하는 항목 -->
 
-집필 완료 전 반드시 아래 항목을 체크하십시오.
+Before completing writing, verify all items below.
 
-- [ ] **챕터 구조**: 도입 → 개념 → 실습 → 정리하며 순서를 준수했는가?
-- [ ] **마지막 섹션**: `## {N}. 정리하며` 형식인가?
-- [ ] **코드 워크플로우**: 모든 코드 블록 아래에 입력/처리/출력 섹션이 있는가?
-- [ ] **기술 명칭**: 기술 용어가 대문자로 정확히 표기되었는가?
-- [ ] **볼드체 공백**: 강조 표기 앞뒤 공백이 포함되었는가?
-- [ ] **실습 동기화**: 본문의 코드가 예제 프로젝트의 코드와 일치하는가?
-- [ ] **이미지 경로**: 실제 이미지 경로가 올바르게 입력되었는가?
+- [ ] **Chapter structure**: Does the order follow Introduction → Concept → Practice → Summary?
+- [ ] **Last section**: Is it in the `## {N}. 정리하며` format?
+- [ ] **Code Workflow**: Is there an Input/Process/Output section below every code block?
+- [ ] **Technical terms**: Are technical terms accurately capitalized?
+- [ ] **Bold spacing**: Is there a space before and after bold text (`**`)?
+- [ ] **Practice synchronization**: Does the body code match the example project code?
+- [ ] **Image paths**: Are actual image paths entered correctly?
+- [ ] **No fabricated output**: Are there no fabricated LLM output text blocks? (see `style.md` §8)
+- [ ] **Screenshot usage**: Are LLM execution results shown as screenshots, not text blocks?

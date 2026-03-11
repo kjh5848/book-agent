@@ -1,0 +1,8 @@
+[2026-02-25 22:39:03] INFO ch09: 에이전트 초기화 시작 — 세션 ID: ae6eb30f
+[2026-02-25 22:39:03] INFO ch09.agent: OllamaLLM 초기화 완료 — 모델: deepseek-r1:1.5b, URL: http://localhost:11434
+[2026-02-25 22:39:03] INFO ch09.agent: 도구 등록 완료 — 4개: ['get_leave_balance', 'get_sales_summary', 'get_employee_info', 'search_company_documents']
+[2026-02-25 22:39:03] INFO ch09: 에이전트 초기화 완료
+[2026-02-25 22:40:04] INFO ch09: 에이전트 초기화 시작 — 세션 ID: 1db39496
+[2026-02-25 22:40:04] INFO ch09.agent: OllamaLLM 초기화 완료 — 모델: deepseek-r1:1.5b, URL: http://localhost:11434
+[2026-02-25 22:40:04] INFO ch09.agent: 도구 등록 완료 — 4개: ['get_leave_balance', 'get_sales_summary', 'get_employee_info', 'search_company_documents']
+[2026-02-25 22:40:04] INFO ch09: 에이전트 초기화 완료

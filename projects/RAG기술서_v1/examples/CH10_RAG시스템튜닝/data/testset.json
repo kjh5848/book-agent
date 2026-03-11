@@ -1,0 +1,152 @@
+[
+  {
+    "question": "연차 신청은 며칠 전에 해야 합니까?",
+    "expected_answer_keywords": ["전월 말일", "팀장"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "재택근무 신청 방법은 무엇입니까?",
+    "expected_answer_keywords": ["팀장", "사전 승인"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "병가 사용 시 제출해야 할 서류는 무엇입니까?",
+    "expected_answer_keywords": ["진단서", "인사팀"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "성과 평가는 연간 몇 회 진행됩니까?",
+    "expected_answer_keywords": ["2회", "S/A/B/C/D"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "출장비 정산 기한은 언제입니까?",
+    "expected_answer_keywords": ["7일", "법인카드"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "재택근무는 주 몇 회까지 허용됩니까?",
+    "expected_answer_keywords": ["2회", "코어 타임"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "신규 입사자 수습 기간은 얼마입니까?",
+    "expected_answer_keywords": ["3개월", "수습"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "육아휴직 사용 가능 기간은 얼마입니까?",
+    "expected_answer_keywords": ["1년", "만 8세"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "교육 지원 한도는 연간 얼마입니까?",
+    "expected_answer_keywords": ["100만원", "직무"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "보안팀 사전 승인이 필요한 행위는 무엇입니까?",
+    "expected_answer_keywords": ["노트북", "반출"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "연차 쓸 때 뭐 필요해?",
+    "expected_answer_keywords": ["전월 말일", "팀장"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "집에서 일하려면 어떻게 해?",
+    "expected_answer_keywords": ["팀장", "승인"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "몸이 아프면 뭘 내야 해?",
+    "expected_answer_keywords": ["진단서", "인사팀"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "평가 등급이 몇 개야?",
+    "expected_answer_keywords": ["5등급", "S"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "출장비 언제까지 정산해?",
+    "expected_answer_keywords": ["7일"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "노트북 외부 가져가도 돼?",
+    "expected_answer_keywords": ["보안팀", "승인"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "수습 때도 연차 써?",
+    "expected_answer_keywords": ["3개월", "사용할 수 없습니다"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "육아휴직 얼마나 쓸 수 있어?",
+    "expected_answer_keywords": ["1년", "만 8세"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "교육비 얼마나 지원받을 수 있어?",
+    "expected_answer_keywords": ["100만원"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "사내 포인트 안 쓰면 어떻게 돼?",
+    "expected_answer_keywords": ["이월", "포인트"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "연차 신청 쓸 때 팀장한테 말해야 해?",
+    "expected_answer_keywords": ["팀장"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "재택 신청 오전 몇 시까지 온라인이어야 해?",
+    "expected_answer_keywords": ["10시", "코어 타임"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "배우자 출산휴가 며칠 돼?",
+    "expected_answer_keywords": ["10일"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "서비스 런칭 몇 주 전에 운영팀에 알려야 해?",
+    "expected_answer_keywords": ["2주", "런칭 계획서"],
+    "expected_source_file": "OPS_신규서비스_런칭전략.pdf"
+  },
+  {
+    "question": "재무 보고서 이사회에 언제까지 내야 해?",
+    "expected_answer_keywords": ["15영업일", "이사회"],
+    "expected_source_file": "FIN_매출현황_v1.0.pdf"
+  },
+  {
+    "question": "연차 신청 기한과 필요 서류를 함께 알려주세요.",
+    "expected_answer_keywords": ["전월 말일", "팀장"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "재택근무 횟수 제한과 코어 타임 시간대를 모두 알려주십시오.",
+    "expected_answer_keywords": ["2회", "10시", "16시"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "병가 처리 절차와 제출 기한을 함께 설명해 주십시오.",
+    "expected_answer_keywords": ["진단서", "3일", "인사팀"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "성과 평가 일정과 등급 체계를 함께 알려주십시오.",
+    "expected_answer_keywords": ["2회", "6월", "12월", "S/A/B/C/D"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  },
+  {
+    "question": "개인정보 접근 권한 재검토 주기와 부적절한 권한 처리 방법을 알려주십시오.",
+    "expected_answer_keywords": ["6개월", "회수"],
+    "expected_source_file": "HR_취업규칙_v1.0.pdf"
+  }
+]

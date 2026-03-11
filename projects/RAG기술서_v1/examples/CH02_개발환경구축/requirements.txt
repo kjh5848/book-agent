@@ -1,0 +1,47 @@
+# requirements.txt
+# AI 업무 비서 구축: RAG + MCP 실전 가이드 — 전체 챕터 의존성
+#
+# 설치 방법:
+#   pip install -r requirements.txt
+#
+# 주의: 이 파일은 버전을 고정합니다. 임의로 버전을 변경하지 마십시오.
+#       Python 3.11 이상 가상환경에서 설치하십시오.
+
+# --- 환경 변수 로딩 ---
+python-dotenv==1.0.1
+
+# --- LLM 파이프라인 (LangChain) ---
+langchain==0.3.19
+langchain-community==0.3.18
+langchain-ollama==0.2.3
+
+# --- 벡터 데이터베이스 ---
+chromadb==0.6.3
+
+# --- 데이터베이스 연동 ---
+psycopg2-binary==2.9.11
+sqlalchemy==2.0.38
+
+# --- HTTP 클라이언트 ---
+httpx==0.28.1
+requests==2.32.3
+
+# --- PDF 파싱 (6장) ---
+pymupdf==1.24.14
+pdfplumber==0.11.5
+
+# --- OCR (10장) ---
+easyocr==1.7.2
+
+# --- API 서버 (4장 인프라 레포용) ---
+fastapi==0.115.8
+uvicorn[standard]==0.34.0
+pydantic==2.10.6
+
+# --- 데이터 처리 ---
+numpy==1.26.4
+pandas==2.2.3
+
+# --- 테스트 ---
+pytest==8.3.4
+pytest-asyncio==0.25.3

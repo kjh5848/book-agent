@@ -1,0 +1,23 @@
+# CH06 벡터 DB 구축 의존성
+# Python 3.11+ 기준 (Python 3.12 권장)
+
+# 환경 변수 로드
+python-dotenv==1.2.1
+
+# ChromaDB - 로컬 벡터 데이터베이스
+chromadb==1.5.1
+
+# PDF 텍스트 추출 (1차: PyMuPDF, 2차: pdfplumber)
+pymupdf==1.24.14
+pdfplumber==0.11.4
+
+# Ollama API 호출
+requests==2.32.5
+
+# sentence-transformers - Ollama 미연결 시 fallback 임베딩
+sentence-transformers==5.2.3
+
+# sentence-transformers 의존성
+torch==2.10.0
+transformers==5.2.0
+numpy==2.4.2

@@ -1,0 +1,140 @@
+{
+  "project": "RAG기술서_v3",
+  "title": "사내 문서 기반 AI 업무 비서 (RAG + MCP)",
+  "status": "done",
+  "current_phase": "phase_6",
+  "chapters": [
+    {
+      "id": "CH01",
+      "title": "이_책의_목표와_최종_완성본_미리보기",
+      "part": "PART_0",
+      "type": "theory",
+      "has_code": false,
+      "plan": "pending",
+      "code": "skip",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH02",
+      "title": "개발_환경_설정",
+      "part": "PART_0.5",
+      "type": "setup",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH03",
+      "title": "LLM의_한계와_RAG의_필요성",
+      "part": "기초",
+      "type": "theory_practice",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH04",
+      "title": "FastAPI_기본_시스템",
+      "part": "PART_1",
+      "type": "practice",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH05",
+      "title": "사내_문서_수집_표준화",
+      "part": "PART_2",
+      "type": "theory_practice",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH06",
+      "title": "VectorDB_구축",
+      "part": "PART_3",
+      "type": "practice",
+      "has_code": true,
+      "legacy": "ex01-1",
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH07",
+      "title": "RAG_QA_엔진",
+      "part": "PART_4",
+      "type": "practice",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH08",
+      "title": "통합_에이전트_설계",
+      "part": "PART_5",
+      "type": "practice",
+      "has_code": true,
+      "legacy": "ex02",
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH09",
+      "title": "LangChain_연결",
+      "part": "PART_6",
+      "type": "practice",
+      "has_code": true,
+      "legacy": "ex03",
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    },
+    {
+      "id": "CH10",
+      "title": "RAG_튜닝",
+      "part": "PART_7",
+      "type": "practice",
+      "has_code": true,
+      "plan": "pending",
+      "code": "done",
+      "toc": "done",
+      "writing": "done",
+      "review": "done"
+    }
+  ],
+  "phases": {
+    "phase_0": "done",
+    "phase_1": "done",
+    "phase_2": "done",
+    "phase_3": "done",
+    "phase_4": "done",
+    "phase_5": "done",
+    "phase_6": "done"
+  }
+}

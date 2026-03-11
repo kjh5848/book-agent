@@ -1,0 +1,12 @@
+# ── CH02 개발 환경 설정 의존성 ──────────────────────────────
+# .env 파일을 환경 변수로 로드
+python-dotenv==1.0.1
+
+# Ollama HTTP API 호출
+requests==2.32.3
+
+# PostgreSQL 연결 드라이버 (Docker 컨테이너 접속용)
+psycopg2-binary==2.9.10
+
+# OpenAI API 호출 (LLM_PROVIDER=openai 선택 시 사용)
+openai==1.59.6

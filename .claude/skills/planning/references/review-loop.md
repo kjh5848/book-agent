@@ -1,44 +1,49 @@
-# 기획 회고 루프 및 LLM 설계 원칙
+# Planning Review Loop and LLM Design Principles
 
-## 기획-회고 루프 (Phase 1 필수 프로토콜)
+## Planning Review Loop (Phase 1 Mandatory Protocol)
+<!-- plan.md 초안 완성 후 반드시 따라야 하는 절차 -->
 
-plan.md 초안 완성 후 **반드시** 아래 절차를 따른다.
-사용자 명시적 승인 없이 Phase 2(코드 생성) 진입 금지.
+After completing the plan.md draft, the following procedure **must** be followed.
+Proceeding to Phase 2 (code generation) without explicit user approval is prohibited.
 
-### 승인 요청 시 필수 포함 내용
+### Required Content in Approval Request
+<!-- 승인 요청 시 반드시 포함해야 할 내용 -->
 
-1. **챕터 구성 요약 테이블** (챕터명 + 예상 분량)
-2. **3가지 피드백 질문**:
-   - 난이도 목표와 기술 스택이 적절한가?
-   - 챕터 순서와 학습 흐름이 자연스러운가?
-   - 추가하거나 제외할 주제가 있는가?
-3. **[기획 고도화 제안]** — 최신 트렌드 기반 누락 항목 제안 (초안이 충분해도 생략 금지)
+1. **Chapter composition summary table** (chapter name + estimated volume)
+2. **3 feedback questions**:
+   - Is the difficulty target and technology stack appropriate?
+   - Is the chapter order and learning flow natural?
+   - Are there any topics to add or exclude?
+3. **[Planning Enhancement Proposal]** — propose missing items based on the latest trends (must not be omitted even if the draft is sufficient)
 
-### [기획 고도화 제안] 형식
+### [Planning Enhancement Proposal] Format
+<!-- 기획 고도화 제안 형식 -->
 
 ```
-## 💡 [기획 고도화 제안]
-| 제안 항목 | 구체적 이유 | 예상 추가 분량 |
-|---------|-----------|-------------|
-| {항목}  | {독자 문제 또는 실무 가치} | ~{N}p |
+## 💡 [Planning Enhancement Proposal]
+| Proposed Item | Specific Reason | Estimated Additional Volume |
+|--------------|-----------------|----------------------------|
+| {item}       | {reader problem or practical value} | ~{N}p |
 ```
 
-### 루프 동작 규칙
+### Loop Operation Rules
+<!-- 루프 동작 규칙 -->
 
-- 수정 요청 → plan.md 즉시 수정 → 재승인 요청
-- 명시적 승인("승인" 또는 "Pass") 전까지 반복
+- On revision request → immediately update plan.md → request re-approval
+- Repeat until explicit approval ("Approved" or "Pass") is given
 
 ---
 
-## LLM Provider 설계 원칙
+## LLM Provider Design Principles
+<!-- 특정 LLM에 종속되지 않는 설계 원칙 -->
 
-특정 LLM에 종속적인 기획 및 코드를 금지한다.
-프로젝트 outline에서 사용할 Provider를 명시하고, `.env` 스위칭으로 전환 가능하도록 설계한다.
+Planning and code that is tied to a specific LLM is prohibited.
+Specify the Provider to be used in the project outline and design so that switching is possible via `.env`.
 
-| Provider 유형 | 환경변수 패턴 |
-|-------------|------------|
-| 로컬 (Ollama) | `LLM_PROVIDER=ollama`, `OLLAMA_MODEL=` |
-| 클라우드 | `LLM_PROVIDER=openai`, `OPENAI_API_KEY=` |
-| 자체 호스팅 (vLLM) | `LLM_PROVIDER=vllm`, `VLLM_BASE_URL=` |
+| Provider Type | Environment Variable Pattern |
+|---------------|------------------------------|
+| Local (Ollama) | `LLM_PROVIDER=ollama`, `OLLAMA_MODEL=` |
+| Cloud | `LLM_PROVIDER=openai`, `OPENAI_API_KEY=` |
+| Self-hosted (vLLM) | `LLM_PROVIDER=vllm`, `VLLM_BASE_URL=` |
 
-프로젝트 outline의 LLM 구성 섹션을 우선 따른다.
+Follow the LLM configuration section in the project outline as the primary reference.

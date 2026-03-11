@@ -1,0 +1,29 @@
+version: "3.9"
+
+# CH09 LangChain 연결 - PostgreSQL 인프라
+# 사용: docker-compose up -d
+# 중지: docker-compose down
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: ch09_postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-rag_db}
+      POSTGRES_USER: ${POSTGRES_USER:-rag_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-rag_password}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - ch09_pgdata:/var/lib/postgresql/data
+      - ./data/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-rag_user} -d ${POSTGRES_DB:-rag_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  ch09_pgdata:
+    driver: local

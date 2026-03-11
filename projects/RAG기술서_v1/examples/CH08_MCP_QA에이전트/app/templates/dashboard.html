@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — MCP Q&A 에이전트{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <!-- 페이지 헤더 -->
+    <div class="d-flex align-items-center mb-4">
+        <i class="bi bi-speedometer2 fs-3 text-primary me-3"></i>
+        <div>
+            <h2 class="mb-0 fw-bold">Dashboard</h2>
+            <small class="text-muted">시스템 현황 및 데이터 통계</small>
+        </div>
+    </div>
+
+    <!-- 통계 카드 -->
+    <div class="row g-4 mb-4">
+        <!-- ChromaDB 문서 수 -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle bg-info bg-opacity-10 p-3 me-3">
+                            <i class="bi bi-database fs-4 text-info"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0">ChromaDB 문서 수</p>
+                            <h3 class="fw-bold mb-0">{{ doc_count | int }}</h3>
+                            <small class="text-muted">청크 단위 저장</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0">
+                    <a href="/admin/qa" class="btn btn-sm btn-outline-info">
+                        <i class="bi bi-search me-1"></i>문서 검색하기
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PostgreSQL 직원 수 -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle bg-success bg-opacity-10 p-3 me-3">
+                            <i class="bi bi-people fs-4 text-success"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0">전체 직원 수</p>
+                            <h3 class="fw-bold mb-0">{{ employee_count | int }}</h3>
+                            <small class="text-muted">PostgreSQL 조회</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0">
+                    <a href="/admin/agent" class="btn btn-sm btn-outline-success">
+                        <i class="bi bi-robot me-1"></i>직원 조회하기
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 매출 합계 -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle bg-warning bg-opacity-10 p-3 me-3">
+                            <i class="bi bi-graph-up-arrow fs-4 text-warning"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted small mb-0">전체 매출 합계</p>
+                            <h3 class="fw-bold mb-0">
+                                {% if sales_total >= 100000000 %}
+                                    {{ "%.1f" | format(sales_total / 100000000) }}억
+                                {% elif sales_total >= 10000 %}
+                                    {{ "%.0f" | format(sales_total / 10000) }}만
+                                {% else %}
+                                    {{ sales_total }}
+                                {% endif %}원
+                            </h3>
+                            <small class="text-muted">PostgreSQL 조회</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-transparent border-0 pt-0">
+                    <a href="/admin/agent" class="btn btn-sm btn-outline-warning">
+                        <i class="bi bi-bar-chart me-1"></i>매출 조회하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 시스템 상태 -->
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-white border-bottom">
+            <h6 class="mb-0 fw-bold">
+                <i class="bi bi-activity me-2 text-primary"></i>시스템 상태
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <!-- Ollama -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center p-3 bg-light rounded">
+                        <i class="bi bi-cpu fs-4 me-3 text-secondary"></i>
+                        <div>
+                            <p class="mb-0 fw-semibold">Ollama LLM</p>
+                            <small class="text-muted">
+                                {% if doc_count >= 0 %}
+                                    <span class="badge bg-success-subtle text-success">연결됨</span>
+                                {% else %}
+                                    <span class="badge bg-danger-subtle text-danger">연결 안됨</span>
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ChromaDB -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center p-3 bg-light rounded">
+                        <i class="bi bi-database fs-4 me-3 text-info"></i>
+                        <div>
+                            <p class="mb-0 fw-semibold">ChromaDB</p>
+                            <small class="text-muted">
+                                {% if doc_count > 0 %}
+                                    <span class="badge bg-success-subtle text-success">문서 {{ doc_count }}건</span>
+                                {% else %}
+                                    <span class="badge bg-warning-subtle text-warning">문서 없음</span>
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PostgreSQL -->
+                <div class="col-md-4">
+                    <div class="d-flex align-items-center p-3 bg-light rounded">
+                        <i class="bi bi-server fs-4 me-3 text-success"></i>
+                        <div>
+                            <p class="mb-0 fw-semibold">PostgreSQL</p>
+                            <small class="text-muted">
+                                {% if employee_count > 0 %}
+                                    <span class="badge bg-success-subtle text-success">직원 {{ employee_count }}명</span>
+                                {% else %}
+                                    <span class="badge bg-danger-subtle text-danger">연결 안됨</span>
+                                {% endif %}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-white border-top">
+            <small class="text-muted">
+                <i class="bi bi-info-circle me-1"></i>
+                문서가 없는 경우 <code>python scripts/ingest.py</code>를 먼저 실행하십시오.
+                DB가 연결되지 않는 경우 <code>docker-compose up -d</code>를 실행하십시오.
+            </small>
+        </div>
+    </div>
+
+    <!-- 시작 가이드 -->
+    <div class="card border-0 shadow-sm mt-4">
+        <div class="card-header bg-white border-bottom">
+            <h6 class="mb-0 fw-bold">
+                <i class="bi bi-play-circle me-2 text-primary"></i>사용 방법
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="p-3 border rounded">
+                        <h6 class="fw-bold text-info">
+                            <i class="bi bi-chat-dots me-2"></i>RAG Q&A
+                        </h6>
+                        <p class="small text-muted mb-2">사내 문서(PDF)를 벡터 검색하여 질문에 답변합니다.</p>
+                        <ul class="small text-muted mb-2">
+                            <li>취업규칙, 복리후생 등 사내 규정 질문</li>
+                            <li>업무 절차, 가이드라인 검색</li>
+                        </ul>
+                        <a href="/admin/qa" class="btn btn-sm btn-info text-white">
+                            <i class="bi bi-arrow-right me-1"></i>Q&A 시작
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-3 border rounded">
+                        <h6 class="fw-bold text-primary">
+                            <i class="bi bi-robot me-2"></i>MCP Agent
+                        </h6>
+                        <p class="small text-muted mb-2">PostgreSQL DB 도구를 자율 호출하여 답변합니다.</p>
+                        <ul class="small text-muted mb-2">
+                            <li>직원 정보, 휴가 잔여일 조회</li>
+                            <li>부서별 매출 현황, 기간별 매출 집계</li>
+                        </ul>
+                        <a href="/admin/agent" class="btn btn-sm btn-primary">
+                            <i class="bi bi-arrow-right me-1"></i>Agent 시작
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

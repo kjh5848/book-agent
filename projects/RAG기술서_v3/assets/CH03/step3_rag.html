@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  /* 한글 폰트 우선 로드 */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+
+  body {
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
+                 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .terminal {
+    width: 860px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    border: 1px solid #d0d0d0;
+  }
+  .titlebar {
+    background: #e0e0e0;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #c8c8c8;
+  }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .dot.red { background: #ff5f57; }
+  .dot.yellow { background: #ffbd2e; }
+  .dot.green { background: #28c940; }
+  .title {
+    color: #555;
+    font-size: 12px;
+    margin-left: 8px;
+    flex: 1;
+    text-align: center;
+    font-weight: 500;
+  }
+  .body {
+    background: #ffffff;
+    padding: 20px 24px;
+    min-height: 120px;
+  }
+  .prompt {
+    color: #0066cc;
+    font-size: 13px;
+    margin-bottom: 10px;
+    word-break: break-all;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .prompt::before {
+    content: '$ ';
+    color: #2a9d2a;
+    font-weight: bold;
+  }
+  .output {
+    color: #222222;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-all;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic',
+                 'Menlo', 'Monaco', 'Courier New', monospace;
+  }
+  .output .err { color: #cc0000; font-weight: 500; }
+  .output .ok  { color: #2a9d2a; font-weight: 500; }
+  .meta {
+    color: #888;
+    font-size: 11px;
+    margin-top: 14px;
+    border-top: 1px solid #e8e8e8;
+    padding-top: 8px;
+    font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
+  }
+  .exit-ok  { color: #2a9d2a; font-weight: 600; }
+  .exit-err { color: #cc0000; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="terminal">
+  <div class="titlebar">
+    <div class="dot red"></div>
+    <div class="dot yellow"></div>
+    <div class="dot green"></div>
+    <div class="title">step3_rag.py — RAG 미리보기 (청킹 적용)</div>
+  </div>
+  <div class="body">
+    <div class="prompt">.venv/bin/python step3_rag.py</div>
+    <div class="output">문서를 학습(임베딩) 중입니다...
+
+질문: 신입사원 휴가 규정에 대해 알려줘.
+------------------------------
+
+--- 검색된 문서(근거) ---
+[복지규정]: [복지규정] 식대 지원: 점심 식사는 무제한 법인카드로 지원하며, 저녁 식사는 오후 9시 이후 야근 시에만 사용이 가능합니다.
+[보안규정]: [보안규정] 업무 보안: 모든 임직원은 회사에서 지급한 승인된 보안 USB만 사용해야 하며, 개인 USB나 외부 저장 매체 사용은 엄격히 금지됩니다.
+[인사규정]: [인사규정] 신입사원 휴가 및 연차: 신입사원은 입사 후 처음 3년 동안은 법정 연차가 발생하지 않습니다. 대신 매월 1회의 유급 '리프레시 데이'를 휴가로 사용할 수 있습니다.
+
+--- AI 답변 ---
+신입사원 휴가 규정에 대해 알려드리겠습니다.
+
+신입사원은 입사 후 처음 3년 동안 법정 연차가 발생하지 않습니다. 대신 매월 1회의 유급 '리프레시 데이'를 휴가로 사용할 수 있습니다. 이는 회사에서 제공하는 특별 휴가로, 사용 시에는 일반 연차와 마찬가지로 업무 일정 조정이 필요합니다. 
+
+추가적인 휴가 사용에 관한 세부 사항은 인사부문과 상담하시는 것이 좋습니다.</div>
+    <!-- 푸터 비활성화 (책 출판용 클린 스타일) -->
+  </div>
+</div>
+</body>
+</html>

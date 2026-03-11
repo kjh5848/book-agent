@@ -1,0 +1,25 @@
+{"timestamp": "2026-02-25T23:38:59", "level": "INFO", "logger": "ch09", "message": "CH09 에이전트 시작"}
+{"timestamp": "2026-02-25T23:38:59", "level": "INFO", "logger": "ch09", "message": "설정: 모델=deepseek-r1, timeout=30s, retries=3, cache_ttl=300s"}
+{"timestamp": "2026-02-25T23:38:59", "level": "INFO", "logger": "ch09.agent_config", "message": "에이전트 빌드 시작: 모델=deepseek-r1, timeout=30s, retries=3"}
+{"timestamp": "2026-02-25T23:38:59", "level": "INFO", "logger": "ch09.agent_config", "message": "MCP 도구 목록 빌드: 도구 수=5"}
+{"timestamp": "2026-02-25T23:38:59", "level": "INFO", "logger": "ch09.agent_config", "message": "RAG 체인 빌드 시작: chroma_dir=./data/chroma_db"}
+{"timestamp": "2026-02-25T23:39:00", "level": "WARNING", "logger": "ch09.agent_config", "message": "RAG 체인 빌드 실패 — ChromaDB 또는 Ollama 미연결로 판단합니다. 오류: unable to infer type for attribute \"chroma_server_nofile\""}
+{"timestamp": "2026-02-25T23:39:00", "level": "WARNING", "logger": "ch09.agent_config", "message": "ChromaDB 미연결 — RAG 검색 도구 없이 DB 도구만 등록합니다."}
+{"timestamp": "2026-02-25T23:39:00", "level": "INFO", "logger": "ch09.agent_config", "message": "도구 목록 구성 완료: 총 5개"}
+{"timestamp": "2026-02-25T23:39:00", "level": "INFO", "logger": "ch09.agent_config", "message": "Ollama 서버 연결 확인: http://localhost:11434"}
+{"timestamp": "2026-02-25T23:39:00", "level": "WARNING", "logger": "ch09.agent_config", "message": "에이전트 구성 실패: LangChain 패키지를 찾을 수 없습니다: cannot import name 'AgentExecutor' from 'langchain.agents' (/private/tmp/ch09_venv/lib/python3.14/site-packages/langchain/agents/__init__.py)\npip install langchain langchain-ollama langchain-core 를 실행하십시오. — Mock 모드로 전환합니다."}
+{"timestamp": "2026-02-25T23:39:00", "level": "INFO", "logger": "ch09.agent_config", "message": "Mock 모드 활성화. 실제 LLM 사용 시: ollama pull deepseek-r1 후 재실행하십시오."}
+{"timestamp": "2026-02-25T23:39:00", "level": "INFO", "logger": "ch09.agent_config", "message": "에이전트 빌드 완료"}
+{"timestamp": "2026-02-25T23:39:03", "level": "WARNING", "logger": "ch09.mcp_tools", "message": "PostgreSQL 미연결 — Mock 직원 데이터를 사용합니다."}
+{"timestamp": "2026-02-25T23:39:03", "level": "WARNING", "logger": "ch09.mcp_tools", "message": "PostgreSQL 미연결 — Mock 연차 데이터를 사용합니다."}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.agent_config", "message": "질문 처리 완료: 2.57초 소요, mode=mock"}
+{"timestamp": "2026-02-25T23:39:03", "level": "WARNING", "logger": "ch09.mcp_tools", "message": "PostgreSQL 미연결 — Mock 부서 직원 목록을 사용합니다."}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.agent_config", "message": "질문 처리 완료: 0.00초 소요, mode=mock"}
+{"timestamp": "2026-02-25T23:39:03", "level": "WARNING", "logger": "ch09.mcp_tools", "message": "PostgreSQL 미연결 — Mock 연간 매출 데이터를 계산합니다."}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.agent_config", "message": "질문 처리 완료: 0.00초 소요, mode=mock"}
+{"timestamp": "2026-02-25T23:39:03", "level": "WARNING", "logger": "ch09.mcp_tools", "message": "PostgreSQL 미연결 — Mock 직원 데이터를 사용합니다."}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.agent_config", "message": "질문 처리 완료: 0.00초 소요, mode=mock"}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.agent_config", "message": "캐시 응답 반환: question=이서연의 현재 잔여 연차는 며칠입니까?"}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09.token_tracker", "message": "토큰 리포트 저장 완료: /Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/자동/examples/CH09_LangChain연결/outputs/token_report.json"}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09", "message": "세션 로그 저장 완료: /Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/자동/examples/CH09_LangChain연결/outputs/session_log.json"}
+{"timestamp": "2026-02-25T23:39:03", "level": "INFO", "logger": "ch09", "message": "토큰 리포트 저장 완료: /Users/nomadlab/Desktop/김주혁/workspace/coding-study/집필에이전트-claude/자동/examples/CH09_LangChain연결/outputs/token_report.json"}

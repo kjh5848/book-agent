@@ -1,0 +1,20 @@
+# FastAPI 웹 프레임워크
+fastapi==0.115.5
+uvicorn==0.32.1
+jinja2==3.1.4
+python-multipart==0.0.12
+
+# LangChain + LLM
+langchain==0.3.7
+langchain-community==0.3.7
+langchain-ollama==0.2.1
+langchain-openai==0.2.7
+
+# 벡터 DB (CH06 연결)
+chromadb==0.5.23
+
+# PDF Vision 파싱
+pymupdf>=1.24.0
+
+# 유틸
+python-dotenv==1.0.1
