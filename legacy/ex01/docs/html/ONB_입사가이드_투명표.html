@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>개발자 가이드 - 투명 표 테스트</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400&display=swap');
+
+        /* 인쇄 설정 */
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+
+        .a4-page {
+            width: 100%;
+            position: relative;
+        }
+
+        header {
+            border-bottom: 3px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            font-weight: 300;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* 핵심 테스트 구역: 투명 표 (Invisible Grid Table) */
+        .invisible-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .invisible-table th {
+            text-align: left;
+            padding: 15px 10px;
+            background-color: #f8f9fa; 
+            font-weight: 700;
+            font-size: 14px;
+            border: none; 
+        }
+
+        .invisible-table td {
+            padding: 15px 10px;
+            vertical-align: top;
+            font-size: 13px;
+            border: none; 
+            border-bottom: 1px solid transparent; 
+        }
+
+        .invisible-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .tag-cell {
+            font-weight: bold;
+            color: #e74c3c;
+            width: 15%;
+        }
+
+        .desc-cell {
+            width: 35%;
+        }
+
+        .code-cell {
+            font-family: 'JetBrains Mono', monospace;
+            color: #2980b9;
+            background-color: #f4f6f7;
+            padding: 10px !important;
+            border-radius: 4px;
+            font-size: 12px !important;
+        }
+
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #999;
+        }
+
+        .note-box {
+            float: right;
+            width: 220px;
+            padding: 15px;
+            margin: 0 0 20px 30px;
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+            font-size: 12px;
+            color: #5d4037;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            line-height: 1.5;
+        }
+        
+        .note-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #d35400;
+            font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <header>
+            <h1>신입 개발자 온보딩 가이드</h1>
+            <div class="subtitle">Metacoding Dev Team | 문서번호: 2026-DEV-001 | Ver 1.0</div>
+        </header>
+
+        <section>
+            <h2>3. 커밋 메시지 규칙 (Commit Convention)</h2>
+            
+            <div class="note-box">
+                <strong>💡 작성 Tip</strong>
+                커밋 메시지는 동료를 위한 배려입니다.<br>
+                '제목'은 50자 이내로 요약하고, '본문'에는 변경 이유를 상세히 적어주세요.
+            </div>
+
+            <p>
+                우리 팀은 Git 커밋 메시지의 가독성을 위해 <strong>Conventional Commits</strong> 규칙을 따릅니다.
+                모든 커밋 메시지는 아래 정의된 <strong>[태그]</strong>로 시작해야 하며, 파이프라인에서 자동 검사됩니다.
+            </p>
+            <p>
+                아래 표는 테두리가 없으므로, AI 파서가 텍스트의 정렬(Alignment)만 보고 행과 열을 구분해야 합니다.
+            </p>
+
+            <table class="invisible-table">
+                <thead>
+                    <tr>
+                        <th>태그 (Tag)</th>
+                        <th>설명 (Description)</th>
+                        <th>사용 예시 (Example)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="tag-cell">Feat</td>
+                        <td class="desc-cell">새로운 기능을 추가할 때 사용합니다. (예: API 개발)</td>
+                        <td class="code-cell">Feat: 사용자 프로필 조회 API 추가</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Fix</td>
+                        <td class="desc-cell">버그를 수정할 때 사용합니다. (긴급 수정 포함)</td>
+                        <td class="code-cell">Fix: 로그인 시 발생하는 401 에러 해결</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Refactor</td>
+                        <td class="desc-cell">코드 리팩토링 (기능 변경 없이 구조 개선)</td>
+                        <td class="code-cell">Refactor: 인증 미들웨어 로직 분리</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Style</td>
+                        <td class="desc-cell">코드 포맷팅, 세미콜론 누락 등 UI/스타일 수정</td>
+                        <td class="code-cell">Style: 버튼 컴포넌트 마진값 조정</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Docs</td>
+                        <td class="desc-cell">문서를 수정하거나 추가할 때 사용합니다.</td>
+                        <td class="code-cell">Docs: API 엔드포인트 명세서 업데이트</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Test</td>
+                        <td class="desc-cell">테스트 코드를 작성하거나 수정할 때 사용합니다.</td>
+                        <td class="code-cell">Test: 결제 흐름 통합 테스트 코드 작성</td>
+                    </tr>
+                    <tr>
+                        <td class="tag-cell">Chore</td>
+                        <td class="desc-cell">빌드 설정이나 패키지 매니저 등 단순 관리 작업</td>
+                        <td class="code-cell">Chore: 프로젝트 의존성 라이브러리 업데이트</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <footer>
+            <span>Metacoding Inc. Confidential</span>
+            <span>Page 3 of 15</span>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 20mm; }
+        .chart-area { border: 1px solid #ddd; height: 300px; position: relative; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 20px; }
+        .bar { width: 40px; background: #3498db; text-align: center; color: white; margin-bottom: 0; }
+        .line-point { width: 10px; height: 10px; background: #e74c3c; border-radius: 50%; position: absolute; }
+        .legend-box { border: 1px dashed #666; padding: 10px; margin-top: 50px; width: 200px; float: right; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 5px; }
+        .color-box { width: 15px; height: 15px; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <h1>2025년 분기별 실적 분석</h1>
+    
+    <div class="chart-area">
+        <!-- 막대 그래프 (매출) -->
+        <div class="bar" style="height: 100px;">1Q</div>
+        <div class="bar" style="height: 150px;">2Q</div>
+        <div class="bar" style="height: 200px;">3Q</div>
+        <div class="bar" style="height: 180px;">4Q</div>
+        
+        <!-- 꺾은선 점 (이익률 - 시각적 흉내) -->
+        <div class="line-point" style="bottom: 110px; left: 15%;"></div> <!-- 10% -->
+        <div class="line-point" style="bottom: 160px; left: 40%;"></div> <!-- 15% -->
+        <div class="line-point" style="bottom: 210px; left: 65%;"></div> <!-- 20% -->
+        <div class="line-point" style="bottom: 190px; left: 90%;"></div> <!-- 18% -->
+    </div>
+
+    <!-- 범례가 차트와 멀리 떨어져 있음 -->
+    <div class="legend-box">
+        <h4>[범례 / Legend]</h4>
+        <div class="legend-item">
+            <div class="color-box" style="background: #3498db;"></div>
+            <span>분기 매출액 (억원)</span>
+        </div>
+        <div class="legend-item">
+            <div class="color-box" style="background: #e74c3c;"></div>
+            <span>영업 이익률 (%)</span>
+        </div>
+    </div>
+</body>
+</html>

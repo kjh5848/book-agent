@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 20mm; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #333; padding: 10px; vertical-align: top; }
+        th { background: #eee; }
+        ul { margin: 0; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>프로젝트 요구사항 명세서</h1>
+    <table>
+        <thead>
+            <tr><th>기능 ID</th><th>기능명</th><th>세부 요건 (List Inside)</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>BS-001</td>
+                <td>사용자 인증</td>
+                <td>
+                    <ul>
+                        <li>이메일 로그인 지원</li>
+                        <li>OAuth 2.0 (Google, GitHub)</li>
+                        <li>2단계 인증 (2FA) 필수</li>
+                    </ul>
+                </td>
+                <td>우선순위: High</td>
+            </tr>
+            <tr>
+                <td>BS-002</td>
+                <td>결제 시스템</td>
+                <td>
+                    1. 신용카드 (Stripe)<br>
+                    2. 계좌이체 (가상계좌)<br>
+                    3. 간편결제 (Toss, Kakao)
+                </td>
+                <td>PG사 계약 필요</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

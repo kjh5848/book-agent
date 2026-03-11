@@ -1,0 +1,20 @@
+name: metacoding-ai
+
+services:
+  db:
+    image: postgres:15
+    container_name: metacoding-ai-db
+    restart: always
+    environment:
+      POSTGRES_USER: metacoding
+      POSTGRES_PASSWORD: metacoding1234
+      POSTGRES_DB: metacoding_db
+    ports:
+      - "5432:5432"
+
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: metacoding-ai-vector
+    restart: always
+    ports:
+      - "8000:8000"

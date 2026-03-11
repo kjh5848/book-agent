@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { 
+            font-family: 'Courier New', monospace; 
+            /* 팩스 느낌의 블러와 대비 */
+            filter: blur(0.6px) contrast(150%) grayscale(100%);
+            background-color: #fcfcfc;
+        }
+        .container { border: 2px solid #000; padding: 20px; transform: rotate(0.5deg); }
+        h1 { text-decoration: underline; text-align: center; }
+        .stamp { 
+            border: 3px double red; color: red; transform: rotate(-10deg); 
+            display: inline-block; padding: 5px 10px; font-weight: bold; 
+            position: absolute; top: 50px; right: 50px; opacity: 0.6;
+        }
+        /* 노이즈 점들 */
+        .dot { position: absolute; width: 2px; height: 2px; background: black; border-radius: 50%; opacity: 0.5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FAX TRANSMISSION</h1>
+        <div class="stamp">URGENT</div>
+        <p><strong>TO:</strong> Management Team</p>
+        <p><strong>FROM:</strong> Factory A</p>
+        <p><strong>DATE:</strong> 2026-02-16</p>
+        <hr>
+        <p>
+            Emergency maintenance required for Line #3.
+            Hydraulic pressure dropped below 500psi.
+            Estimated downtime: 4 hours.
+        </p>
+        <br><br>
+        <p>Signed: __________________</p>
+    </div>
+    <!-- Random noise dots -->
+    <div class="dot" style="top:100px; left:200px"></div>
+    <div class="dot" style="top:300px; left:400px"></div>
+    <div class="dot" style="top:500px; left:100px"></div>
+    <div class="dot" style="top:150px; left:50px"></div>
+    <div class="dot" style="top:600px; left:350px"></div>
+</body>
+</html>

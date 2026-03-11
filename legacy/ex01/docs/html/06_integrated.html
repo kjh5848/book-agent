@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 10mm; }
+        body { font-family: 'Noto Sans KR', sans-serif; position: relative; line-height: 1.4; }
+        .header { position: absolute; top: 0; width: 100%; text-align: right; font-size: 10px; color: #888; padding-bottom: 5px; }
+        .footer { position: absolute; bottom: 0; width: 100%; text-align: center; font-size: 10px; color: #888; padding-top: 5px; }
+        h1 { text-align: center; margin-bottom: 15px; margin-top: 40px; font-size: 24px; }
+        .intro { text-align: justify; margin-bottom: 10px; font-size: 14px; }
+        
+        .columns { column-count: 2; column-gap: 20px; text-align: justify; margin-bottom: 15px; font-size: 12px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; break-inside: avoid; font-size: 12px; }
+        th, td { border: 1px solid #333; padding: 5px; text-align: center; }
+        th { background: #f2f2f2; }
+        
+        .image-area { text-align: center; margin-top: 15px; margin-bottom: 30px; }
+        .caption { font-size: 11px; color: #555; margin-top: 3px; font-style: italic; }
+        .chart-box { width: 80%; height: 180px; background: #eee; border: 1px dashed #999; margin: 0 auto; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <div class="header">2026년도 상반기 사업보고서 (대외비) - 기획전략실</div>
+    
+    <h1>차세대 AI 플랫폼 구축 전략</h1>
+    
+    <div class="intro">
+        본 보고서는 당사의 미래 경쟁력을 좌우할 핵심 프로젝트인 '넥스트젠 AI(NextGen AI)' 플랫폼 구조와 
+        실행 계획을 담고 있다. 금번 프로젝트는 전사적인 역량을 집중하여 3개월 내에 MVP를 출시하는 것을 목표로 한다.
+    </div>
+    
+    <div class="columns">
+        <p>
+            <strong>1. 시장 환경 분석</strong><br>
+            글로벌 AI 시장은 연평균 40% 이상의 고성장을 기록하고 있다. 
+            특히 생성형 AI 분야는 기술 발전 속도가 빨라 선점 효과가 매우 중요하다.
+            경쟁사 A사는 이미 LLM 기반의 고객 응대 시스템을 도입하여 상담 효율을 30% 개선했다.
+        </p>
+        <p>
+            <strong>2. 기술적 과제</strong><br>
+            대규모 언어 모델을 사내 시스템에 통합하는 과정에서 데이터 보안과 
+            할루시네이션(Hallucination) 제어가 가장 큰 걸림돌이 되고 있다.
+            이를 해결하기 위해 RAG(검색 증강 생성) 아키텍처를 도입하고, 
+            벡터 데이터베이스를 최적화해야 한다.
+        </p>
+    </div>
+    
+    <!-- Wide Table breaking the flow -->
+    <table>
+        <thead>
+            <tr><th>구분</th><th>1분기 목표</th><th>2분기 목표</th><th>3분기 목표</th><th>비고</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>인프라 구축</td><td>클라우드 마이그레이션</td><td>GPU 서버 증설</td><td>엣지 컴퓨팅</td><td>예산 5억</td></tr>
+            <tr><td>모델 개발</td><td>오픈소스 튜닝</td><td>자체 경량화 모델</td><td>멀티모달 통합</td><td>인력 10명</td></tr>
+            <tr><td>서비스 런칭</td><td>사내 베타 테스트</td><td>대고객 오픈</td><td>글로벌 확장</td><td>마케팅 협업</td></tr>
+        </tbody>
+    </table>
+    
+    <div class="intro">
+        위의 표에서 볼 수 있듯이, 각 분기별 마일스톤은 매우 도전적이다. 
+        특히 2분기는 인프라 증설과 모델 최적화가 동시에 이루어져야 하는 크리티컬 패스(Critical Path) 구간이다.
+    </div>
+    
+    <div class="image-area">
+        <img src="assets/chart.png" style="width:100%; max-width:600px;">
+        <div class="caption">그림 1-1. NextGen AI 시스템 아키텍처 구조도</div>
+    </div>
+
+    <div class="footer">Page 10 / 52</div>
+</body>
+</html>

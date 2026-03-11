@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @page { size: A4; margin: 20mm; }
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .chart-container { width: 100%; max-width: 600px; margin: 50px auto; }
+        .description { font-size: 14px; background: #eee; padding: 15px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>2026년 1분기 성과 분석 그래프</h1>
+    <div class="description">
+        아래 차트의 수치를 확인하여 이번 분기 성과가 가장 낮은 항목과 그 이유를 분석하세요. 
+        (텍스트 파서는 숫자 조각만 읽을 수 있습니다)
+    </div>
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['생산성', '정확도', '팀워크', '고객만족도'],
+                datasets: [{
+                    label: '성과 점수',
+                    data: [85, 92, 78, 45],
+                    backgroundColor: ['#3498db', '#2ecc71', '#f1c40f', '#e74c3c']
+                }]
+            },
+            options: {
+                animation: false,
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>

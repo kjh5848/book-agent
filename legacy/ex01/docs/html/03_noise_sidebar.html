@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 0; }
+        body { display: flex; height: 100vh; margin: 0; font-family: 'Noto Sans KR'; }
+        .main { width: 70%; padding: 30px; }
+        .sidebar { width: 30%; background: #f0f0f0; padding: 30px; font-size: 12px; color: #555; }
+        p { text-align: justify; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>RAG 시스템 아키텍처</h1>
+        <p>
+            RAG(Retrieval-Augmented Generation)는 대규모 언어 모델의 출력을 최적화하여 
+            응답을 생성하기 전에 신뢰할 수 있는 지식 베이스를 참조하게 하는 기술입니다.
+            이를 통해 LLM은 훈련 데이터에 포함되지 않은 최신 정보나 특정 도메인 정보를
+            활용할 수 있게 됩니다.
+        </p>
+        <p>
+            벡터 데이터베이스는 이러한 RAG 시스템의 핵심 구성 요소로, 
+            텍스트 임베딩을 저장하고 유사도 검색을 수행하는 역할을 담당합니다.
+            Pinecone, Weaviate, ChromaDB 등이 대표적인 벡터 DB 솔루션입니다.
+        </p>
+    </div>
+    <div class="sidebar">
+        <h3>💡 용어 설명</h3>
+        <p><strong>LLM</strong>: Large Language Model. 대규모 텍스트 데이터로 훈련된 인공지능 모델.</p>
+        <p><strong>Embedding</strong>: 텍스트를 고차원 벡터로 변환하는 과정. 의미론적 유사성을 계산하는 데 사용됨.</p>
+        <p><strong>Vector DB</strong>: 벡터 데이터를 효율적으로 저장하고 검색하기 위한 특수 데이터베이스.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+{% extends "base.html" %} {% block title %}통합 Q&A 검색 - 메타코딩{% endblock
+%} {% block page_title %}통합 Q&A 검색 (Hybrid Search)
+<span class="badge badge-success">AI 연동</span>{% endblock %} {% block
+page_subtitle %}사내의 모든 데이터를 AI가 분석하여 가장 정확한 답변을
+제안합니다.
+<button
+  onclick="clearChatHistory()"
+  class="btn-clear-chat"
+  title="대화 내역 지우기"
+>
+  🗑️ 내역 지우기
+</button>
+<div class="mode-toggle">
+  <label class="switch">
+    <input type="checkbox" id="agentModeToggle">
+    <span class="slider round"></span>
+  </label>
+  <span class="mode-label">🤖 에이전트 모드</span>
+</div>
+{% endblock %} {% block content %}
+<!-- 외부 자원 연결 -->
+<link rel="stylesheet" href="/static/css/qa.css?v=20260210_1248" />
+
+<div class="chat-app-container">
+  <div id="chatHistory" class="chat-history">
+    <!-- 초기 환영 메시지 -->
+    <div class="chat-message ai-message">
+      <div class="avatar">🤖</div>
+      <div class="message-content">
+        안녕하세요! 메타코딩 지능형 비서입니다. 사내 규정, 직원 정보, 매출 현황
+        등 궁금한 점을 물어보세요.
+      </div>
+    </div>
+
+    <!-- 검색 결과가 있으면 표시 (SSR 대응) -->
+    {% if query %}
+    <div class="chat-message user-message">
+      <div class="message-content">{{ query }}</div>
+    </div>
+    {% endif %} {% if results %}
+    <div class="chat-message ai-message">
+      <div class="avatar">🤖</div>
+      <div class="message-content">
+        <div class="ai-ans-text">
+          {% if ai_answer %} {{ ai_answer | replace('\n', '<br />') | safe }} {%
+          else %} 답변을 준비하지 못했습니다. 다시 시도해 주세요. {% endif %}
+        </div>
+
+        <!-- 상세 근거 섹션 -->
+        <div class="source-container">
+          <div
+            class="source-header"
+            onclick="this.parentElement.classList.toggle('active')"
+          >
+            <span>🔍 분석 근거 보기 (Reference Data)</span>
+            <i class="arrow">▼</i>
+          </div>
+          <div class="source-body">
+            <div class="source-grid">
+              <div class="source-column">
+                <h5>📚 문서 검색 결과</h5>
+                {% for item in results.unstructured %}
+                <div class="source-item">
+                  <small>{{ item.source }}</small>
+                  <p>{{ item.content[:150] }}...</p>
+                </div>
+                {% else %}
+                <p class="no-data">관련 문서 없음</p>
+                {% endfor %}
+              </div>
+              <div class="source-column">
+                <h5>📊 데이터베이스 조회</h5>
+                {% if results.structured.employees %}
+                <div class="source-item">
+                  직원 정보: {{ results.structured.employees|length }}건
+                </div>
+                {% endif %} {% if results.structured.leaves %}
+                <div class="source-item">휴가 정보 발견</div>
+                {% endif %} {% if results.structured.sales %}
+                <div class="source-item">관련 매출 데이터 발견</div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 로딩 스피너 (JS에서 제어) -->
+  <div id="loadingIndicator" class="loading-indicator" style="display: none">
+    <div class="spinner"></div>
+    <span>메타코딩 AI가 분석 중입니다...</span>
+  </div>
+
+  <!-- 질문 입력바 (하단 고정) -->
+  <div class="chat-footer">
+    <form id="qaForm" class="chat-input-form">
+      <input
+        type="text"
+        id="queryInput"
+        placeholder="인사 규정이나 영업팀 매출에 대해 물어보세요..."
+        autocomplete="off"
+        required
+        class="form-control chat-input"
+        style="margin-bottom: 0 !important"
+      />
+      <button type="submit" class="btn-send">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="/static/js/qa.js?v=20260210_1242"></script></script>
+{% endblock %}

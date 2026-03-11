@@ -1,0 +1,6 @@
+# MCP 에이전트 전용 의존성
+mcp>=1.0.0
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-ollama>=0.2.0
