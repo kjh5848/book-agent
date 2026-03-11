@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: A4; margin: 20mm; }
+        .node { border: 1px solid #333; padding: 10px; border-radius: 5px; display: inline-block; width: 100px; text-align: center; }
+        .arrow { font-size: 20px; font-weight: bold; margin: 0 10px; }
+        .row { margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <h1>고객 불만 처리 프로세스</h1>
+    <div style="margin-top: 50px;">
+        <div class="row">
+            <div class="node">접수</div>
+            <span class="arrow">⬇</span>
+        </div>
+        <div class="row">
+            <div class="node">분류</div>
+            <span class="arrow">➡</span>
+            <div class="node">담당자 배정</div>
+            <span class="arrow">⬇</span>
+        </div>
+        <div class="row">
+            <div class="node">완료 보고</div>
+            <span class="arrow">⬅</span>
+            <div class="node">조치 수행</div>
+        </div>
+    </div>
+</body>
+</html>

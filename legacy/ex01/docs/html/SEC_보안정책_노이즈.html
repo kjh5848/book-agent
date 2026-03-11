@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>보안 정책 - 헤더/푸터 노이즈 테스트</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+
+        /* 인쇄 설정: 노이즈 테스트를 위해 여백 없이 꽉 채움 */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+
+        .a4-page {
+            width: 100%;
+            height: 297mm; /* 페이지 높이는 고정(페이지 분할 테스트용) */
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .repeat-header {
+            position: absolute;
+            top: 15mm;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            border-bottom: 2px solid #c0392b;
+            padding-bottom: 10px;
+        }
+
+        .header-text {
+            color: #c0392b;
+            font-weight: 900;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .sub-header {
+            font-size: 10px;
+            color: #999;
+            margin-top: 5px;
+        }
+
+        .repeat-footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            color: #7f8c8d;
+            font-size: 11px;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 80px;
+            color: rgba(0, 0, 0, 0.03);
+            font-weight: 900;
+            z-index: 0;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .content {
+            padding: 25mm 25mm 15mm 25mm; /* 본문 영역에 패딩 부여 */
+            margin-top: 30px;
+            z-index: 1;
+            position: relative;
+            line-height: 1.8;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #2980b9;
+            margin-top: 20px;
+            border-left: 4px solid #2980b9;
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .split-point {
+            background-color: #fff3cd;
+            padding: 0 2px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- PAGE 1 -->
+    <div class="a4-page">
+        <!-- HEADER NOISE -->
+        <div class="repeat-header">
+            <div class="header-text">CONFIDENTIAL DOCUMENT - DO NOT DISTRIBUTE</div>
+            <div class="sub-header">Metacoding Inc. Security Policy v2.0</div>
+        </div>
+
+        <div class="watermark">CONFIDENTIAL</div>
+
+        <div class="content">
+            <h1>보안 정책 및 운영 가이드</h1>
+            
+            <p style="text-align: center; color: #666; font-size: 13px; margin-bottom: 40px;">
+                문서번호: 2026-SEC-001 | 시행일: 2026.01.01
+            </p>
+
+            <h2>제3장 정보 보안 및 AI 윤리</h2>
+            <p>
+                본 장에서는 Metacoding Inc.의 하이브리드 근무 환경에서 발생할 수 있는 모든 보안 위협에 대응하기 위한 핵심 원칙을 정의합니다. 우리는 기존의 경계형 보안 모델을 탈피하고, 데이터 중심의 보안 체계를 수립하였습니다.
+            </p>
+
+            <h2>3.1 Zero Trust 보안 아키텍처</h2>
+            <p>
+                회사의 모든 정보 시스템 접근은 <strong>"신뢰하지 않고 항상 검증한다(Never Trust, Always Verify)"</strong>는 원칙을 따릅니다. 이는 내부 네트워크에 접속한 사용자라도 무조건적인 신뢰를 부여하지 않음을 의미합니다.
+            </p>
+            <p>
+                따라서 사내 클라우드 리소스 및 인트라넷에 대한 모든 접근 요청을 잠재적 위협으로 간주하며, <span class="split-point">생체</span>
+                <!-- 여기서 문장이 의도적으로 끊깁니다. 다음 페이지로 이어집니다. -->
+            </p>
+        </div>
+
+        <!-- FOOTER NOISE -->
+        <div class="repeat-footer">
+            Metacoding Security Team | <strong>Security Policy v2.0 - Page 1</strong> | All rights reserved.
+        </div>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="a4-page">
+        <!-- HEADER NOISE (반복) -->
+        <div class="repeat-header">
+            <div class="header-text">CONFIDENTIAL DOCUMENT - DO NOT DISTRIBUTE</div>
+            <div class="sub-header">Metacoding Inc. Security Policy v2.0</div>
+        </div>
+
+        <div class="watermark">CONFIDENTIAL</div>
+
+        <div class="content">
+            <!-- 문장 이어짐 -->
+            <p>
+                <span class="split-point">인식(지문/FaceID) 및 다중 인증(MFA)을 통해서만</span> 접근 권한이 부여됩니다. 인가되지 않은 개인 기기(BYOD)를 통한 직접적인 내부망 접속은 원칙적으로 차단됩니다.
+            </p>
+
+            <h2>3.2 생성형 AI 활용 가이드라인 (GenAI Protocol)</h2>
+            <p>
+                업무 생산성 향상을 위해 회사가 승인한 엔터프라이즈 AI 도구(GitHub Copilot for Business, Gemini Enterprise 등)의 사용을 적극 권장합니다. 단, 데이터 유출 방지를 위해 다음 수칙을 준수해야 합니다.
+            </p>
+            <ul>
+                <li>
+                    <strong>데이터 보호:</strong> 고객 개인정보(PII), 핵심 소스 코드, 미공개 전략 문서는 어떠한 경우에도 외부 퍼블릭 AI 모델 학습에 사용되지 않도록 주의해야 합니다.
+                </li>
+                <li>
+                    <strong>Enterprise Shield:</strong> 사내 AI 도구 사용 시, 반드시 학습 방지 모드(Opt-out)가 활성화되어 있는지 확인 후 사용하십시오.
+                </li>
+            </ul>
+        </div>
+
+        <!-- FOOTER NOISE (반복) -->
+        <div class="repeat-footer">
+            Metacoding Security Team | <strong>Security Policy v2.0 - Page 2</strong> | All rights reserved.
+        </div>
+    </div>
+
+</body>
+</html>

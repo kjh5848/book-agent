@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>성과 평가 - 차트 분석 테스트</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        /* 인쇄 설정 */
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+
+        .a4-page {
+            width: 100%;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify_content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        .header-left h1 {
+            font-size: 24px;
+            margin: 0;
+            color: #2c3e50;
+            letter-spacing: -1px;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 11px;
+            color: #7f8c8d;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .chart-figure {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .chart-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .bar-chart {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 250px;
+            gap: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            position: relative;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 60px;
+            position: relative;
+        }
+
+        .bar {
+            width: 100%;
+            background: linear-gradient(to top, #3498db, #5dade2);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.5s;
+            position: relative;
+        }
+
+        .bar.winner {
+            background: linear-gradient(to top, #e74c3c, #ec7063);
+        }
+
+        .bar-value {
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .bar-label {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #555;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .grid-line {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            border-top: 1px dashed #ddd;
+            z-index: 0;
+        }
+
+        .figure-caption {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #777;
+            font-style: italic;
+        }
+
+        .analysis-box {
+            background-color: #fff;
+            border-left: 4px solid #95a5a6;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        footer {
+            margin-top: 50px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 10px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        <header>
+            <div class="header-left">
+                <h1>성과 평가 및 보상 체계</h1>
+            </div>
+            <div class="header-right">
+                Metacoding Inc. HR Report<br>
+                Section 06. Performance Review
+            </div>
+        </header>
+
+        <h2>제6장. 데이터 기반 성과 평가 (Data-Driven Review)</h2>
+        
+        <p>
+            기존의 정성적 평가 방식은 평가자의 주관이 개입될 여지가 많았습니다. 이에 우리 회사는 2026년부터 협업 툴(GitHub, Jira, Confluence)에서 추출된 데이터를 기반으로 하는 <strong>'객관적 성과 지표'</strong>를 도입하였습니다.
+        </p>
+        <p>
+            각 항목별 가중치는 직군에 따라 다르며, 개발 직군의 경우 소스 코드 기여도와 동료 간의 코드 리뷰 활동이 핵심 평가 요소로 작용합니다. 상세한 항목별 점수 현황은 아래 <strong>[Figure 6-1]</strong>을 참조하십시오.
+        </p>
+
+        <div class="chart-figure">
+            <div class="chart-title">[Figure 6-1] 2025년 하반기 개발 직군 평균 성과 지표 (100점 만점)</div>
+            
+            <div class="bar-chart">
+                <div class="grid-line" style="bottom: 20%;"></div>
+                <div class="grid-line" style="bottom: 50%;"></div>
+                <div class="grid-line" style="bottom: 80%;"></div>
+
+                <div class="bar-group">
+                    <div class="bar-value">85</div>
+                    <div class="bar" style="height: 170px;"></div>
+                    <div class="bar-label">GitHub<br>Commits</div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-value" style="color: #e74c3c; font-size: 16px;">92</div>
+                    <div class="bar winner" style="height: 184px;"></div>
+                    <div class="bar-label">Code<br>Review</div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-value">78</div>
+                    <div class="bar" style="height: 156px;"></div>
+                    <div class="bar-label">Jira<br>Issues</div>
+                </div>
+
+                <div class="bar-group">
+                    <div class="bar-value">60</div>
+                    <div class="bar" style="height: 120px; background: #95a5a6;"></div>
+                    <div class="bar-label">Tech<br>Blog</div>
+                </div>
+            </div>
+
+            <div class="figure-caption">
+                * Source: Internal HR Analytics Dashboard (2025.12)
+            </div>
+        </div>
+
+        <div class="analysis-box">
+            <strong>📊 분석 코멘트 (Analysis)</strong><br>
+            위 차트에서 볼 수 있듯이, 개발팀은 개인의 코딩 양(Commits)보다는 <strong>팀 전체의 코드 품질을 높이는 활동</strong>에 더 높은 가중치를 부여받고 있습니다. 이는 협업을 중시하는 회사의 핵심 가치와 일치합니다. 반면, 기술 블로그 작성(Tech Blog) 참여율은 상대적으로 저조하여 내년도 개선이 필요합니다.
+        </div>
+
+        <p>
+            평가 결과에 따라 S, A, B, C 등급이 부여되며, 상위 20% 인재에게는 연봉 인상 외에도 스톡옵션(Stock Option) 추가 부여 혜택이 제공됩니다.
+        </p>
+
+        <footer>
+            Metacoding Inc. Confidential Document | Page 12 of 30
+        </footer>
+    </div>
+
+</body>
+</html>

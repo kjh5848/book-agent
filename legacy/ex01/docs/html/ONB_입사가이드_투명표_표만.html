@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>투명 표 전용 예제</title>
+    <style>
+        body { background-color: white; margin: 40px; font-family: 'Noto Sans KR', sans-serif; }
+        .invisible-table { width: 100%; border-collapse: collapse; }
+        .invisible-table th { text-align: left; padding: 15px 10px; background-color: #f8f9fa; font-weight: 700; font-size: 14px; border: none; }
+        .invisible-table td { padding: 15px 10px; vertical-align: top; font-size: 13px; border: none; }
+        .tag-cell { font-weight: bold; color: #e74c3c; width: 15%; }
+        .desc-cell { width: 35%; }
+        .code-cell { font-family: 'JetBrains Mono', monospace; color: #2980b9; background-color: #f4f6f7; padding: 10px !important; border-radius: 4px; font-size: 12px !important; }
+    </style>
+</head>
+<body>
+    <table class="invisible-table">
+        <thead>
+            <tr>
+                <th>태그 (Tag)</th>
+                <th>설명 (Description)</th>
+                <th>사용 예시 (Example)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tag-cell">Feat</td>
+                <td class="desc-cell">새로운 기능을 추가할 때 사용합니다. (예: API 개발)</td>
+                <td class="code-cell">Feat: 사용자 프로필 조회 API 추가</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Fix</td>
+                <td class="desc-cell">버그를 수정할 때 사용합니다. (긴급 수정 포함)</td>
+                <td class="code-cell">Fix: 로그인 시 발생하는 401 에러 해결</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Refactor</td>
+                <td class="desc-cell">코드 리팩토링 (기능 변경 없이 구조 개선)</td>
+                <td class="code-cell">Refactor: 인증 미들웨어 로직 분리</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Style</td>
+                <td class="desc-cell">코드 포맷팅, 세미콜론 누락 등 UI/스타일 수정</td>
+                <td class="code-cell">Style: 버튼 컴포넌트 마진값 조정</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Docs</td>
+                <td class="desc-cell">문서를 수정하거나 추가할 때 사용합니다.</td>
+                <td class="code-cell">Docs: API 엔드포인트 명세서 업데이트</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Test</td>
+                <td class="desc-cell">테스트 코드를 작성하거나 수정할 때 사용합니다.</td>
+                <td class="code-cell">Test: 결제 흐름 통합 테스트 코드 작성</td>
+            </tr>
+            <tr>
+                <td class="tag-cell">Chore</td>
+                <td class="desc-cell">빌드 설정이나 패키지 매니저 등 단순 관리 작업</td>
+                <td class="code-cell">Chore: 프로젝트 의존성 라이브러리 업데이트</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

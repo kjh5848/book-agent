@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>보안 규정 - OCR 테스트 (Low Quality)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Black+Han+Sans&display=swap');
+
+        /* 인쇄 설정: 스캔 문서 느낌을 위해 여백 없이 */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 스캔 문서 느낌을 주기 위한 컨테이너 */
+        .scan-container {
+            width: 100%;
+            height: 297mm;
+            overflow: hidden;
+            transform: rotate(-0.8deg); 
+            filter: blur(0.8px) contrast(1.3) brightness(0.95) grayscale(0.3);
+        }
+
+        .a4-page {
+            width: 100%;
+            height: 100%;
+            background-color: #f4f1ea;
+            padding: 25mm;
+            box-sizing: border-box;
+            position: relative;
+            font-family: 'Nanum Myeongjo', serif;
+            color: #2a2a2a;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+        }
+
+        .content, h1, h2, li {
+            text-shadow: 0.1px 0.1px 0.5px rgba(0,0,0,0.2);
+        }
+
+        .approval-box {
+            position: absolute;
+            top: 25mm;
+            right: 25mm;
+            border: 2px solid #333;
+            display: flex;
+            width: 200px;
+            height: 70px;
+            opacity: 0.9;
+        }
+
+        .approval-column {
+            flex: 1;
+            border-left: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .approval-column:first-child { border-left: none; }
+
+        .app-title {
+            border-bottom: 1px solid #333;
+            text-align: center;
+            font-size: 11px;
+            padding: 2px;
+            background: #e0e0e0;
+        }
+        .app-sign {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #555;
+        }
+
+        .signature {
+            font-family: cursive;
+            font-size: 18px;
+            transform: rotate(-10deg);
+            color: #111;
+        }
+
+        header {
+            text-align: center;
+            margin-top: 110px;
+            margin-bottom: 50px;
+            border-bottom: 3px double #333;
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 36px;
+            margin: 0;
+            letter-spacing: 5px;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            color: #111;
+        }
+
+        .doc-info {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .content {
+            line-height: 2.0;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .article-box {
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .warning-text {
+            color: #a93226;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: circle;
+            padding-left: 20px;
+        }
+
+        .stamp {
+            position: absolute;
+            bottom: 40mm;
+            right: 40mm;
+            width: 100px;
+            height: 100px;
+            border: 3px solid #c0392b;
+            border-radius: 50%;
+            color: #c0392b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 16px;
+            transform: rotate(-15deg);
+            opacity: 0.6;
+            z-index: 10;
+            mix-blend-mode: multiply;
+        }
+        
+        .stamp-inner {
+            border: 1px solid #c0392b;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .hole {
+            position: absolute;
+            left: 10mm;
+            width: 15px;
+            height: 15px;
+            background-color: #2c2c2c;
+            border-radius: 50%;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .hole1 { top: 10%; }
+        .hole2 { top: 50%; }
+        .hole3 { top: 90%; }
+        
+        .toner-spot {
+            position: absolute;
+            background: rgba(0,0,0,0.05);
+            border-radius: 50%;
+            filter: blur(2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="scan-container">
+        <div class="a4-page">
+            
+            <div class="toner-spot" style="top: 20%; left: 10%; width: 50px; height: 50px;"></div>
+            <div class="toner-spot" style="top: 80%; right: 5%; width: 100px; height: 20px; transform: rotate(30deg);"></div>
+            <div class="toner-spot" style="bottom: 10%; left: 40%; width: 10px; height: 10px; background: rgba(0,0,0,0.1);"></div>
+
+            <div class="hole hole1"></div>
+            <div class="hole hole2"></div>
+            <div class="hole hole3"></div>
+
+            <div class="approval-box">
+                <div class="approval-column">
+                    <div class="app-title">기 안</div>
+                    <div class="app-sign"><span class="signature">Choi</span></div>
+                </div>
+                <div class="approval-column">
+                    <div class="app-title">검 토</div>
+                    <div class="app-sign"><span class="signature">Park</span></div>
+                </div>
+                <div class="approval-column">
+                    <div class="app-title">승 인</div>
+                    <div class="app-sign"><span class="signature">Jang</span></div>
+                </div>
+            </div>
+
+            <header>
+                <h1>보안 규정 지침서</h1>
+                <div class="doc-info">
+                    문서번호 : 2026-SEC-001 <br>
+                    보존연한 : 영구 <br>
+                    공개등급 : 대외비 (Confidential)
+                </div>
+            </header>
+
+            <div class="content">
+                <h2>제4조 (생성형 AI 활용 지침)</h2>
+                
+                <div class="article-box">
+                    <p>
+                        <strong>1. 기본 원칙</strong><br>
+                        회사는 업무 생산성 향상을 위해 승인된 AI 도구의 사용을 장려한다. 단, 정보 자산의 유출을 방지하기 위해 본 지침을 엄격히 준수해야 한다.
+                    </p>
+                </div>
+
+                <p>
+                    <strong>2. 금지 사항 (Critical)</strong><br>
+                    <span class="warning-text">[주의] 고객 개인정보(PII), 핵심 소스코드, 미공개 전략 문서</span>는 어떠한 경우에도 외부 퍼블릭 AI(ChatGPT 무료판, DeepL 웹 버전 등)에 입력해서는 안 된다. 이는 심각한 보안 사고로 간주되어 징계 사유가 될 수 있다.
+                </p>
+
+                <p>
+                    <strong>3. 사용 가능 도구 (Allowed Tools)</strong><br>
+                    회사가 라이선스를 제공하는 엔터프라이즈급 AI 도구만 사용이 허가된다.
+                </p>
+                <ul>
+                    <li>GitHub Copilot for Business</li>
+                    <li>Gemini Enterprise (사내 계정 로그인 필수)</li>
+                </ul>
+
+                <p>
+                    <strong>4. 보안 설정 의무 (Mandatory Setting)</strong><br>
+                    AI 도구를 사용할 때는 반드시 데이터 학습 방지 기능인 <strong>'Enterprise Shield'</strong> 모드(또는 Opt-out 설정)가 활성화되어 있는지 확인해야 한다. 해당 모드가 꺼진 상태에서의 업무 수행은 금지된다.
+                </p>
+
+                <p>
+                    <strong>5. 책임 소재</strong><br>
+                    AI가 생성한 코드 및 문서에 대한 최종 검증 책임은 사용자 본인에게 있다. AI의 오류(Hallucination)로 인한 서비스 장애 발생 시, 이를 검증하지 않은 사용자가 책임을 진다.
+                </p>
+
+            </div>
+
+            <div class="stamp">
+                <div class="stamp-inner">
+                    메타코딩<br>주식회사<br><strong>대외비</strong>
+                </div>
+            </div>
+
+            <div style="position: absolute; bottom: 15mm; left: 0; width: 100%; text-align: center; font-size: 10px; color: #666;">
+                Metacoding Inc. Security Team | 2026.02.15 Printed
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

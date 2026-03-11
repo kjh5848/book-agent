@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}사내 시스템 관리자{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/admin.css') }}?v=20260208">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">사내 시스템 관리자</div>
+        <div class="nav-title">메뉴</div>
+        <a class="nav-link {% if active_page == 'qa' %}active{% endif %}" href="/admin/qa">통합 Q&A</a>
+        <a class="nav-link {% if active_page == 'dashboard' %}active{% endif %}" href="/admin/dashboard">대시보드</a>
+        <a class="nav-link {% if active_page == 'employees' %}active{% endif %}" href="/admin/employees">직원 관리</a>
+        <a class="nav-link {% if active_page == 'leaves' %}active{% endif %}" href="/admin/leaves">휴가 관리</a>
+        <a class="nav-link {% if active_page == 'sales' %}active{% endif %}" href="/admin/sales">매출 관리</a>
+        <a class="nav-link {% if active_page == 'ingest' %}active{% endif %}" href="/admin/ingest">인제스트 관리</a>
+    </aside>
+
+    <main class="content">
+        <div class="page-header">
+            <div class="page-title">{% block page_title %}{% endblock %}</div>
+            <div class="page-subtitle">{% block page_subtitle %}{% endblock %}</div>
+        </div>
+
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

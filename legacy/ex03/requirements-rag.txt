@@ -1,0 +1,8 @@
+# 3. RAG Engine (비정형 데이터 검색)
+langchain                 # LLM 애플리케이션 개발을 위한 메인 프레임워크
+langchain-community       # 랭체인 커뮤니티 통합 도구 (다양한 로더/벡터스토어 지원)
+langchain-openai          # OpenAI 모델 연동을 위한 랭체인 패키지
+langchain-text-splitters  # 긴 텍스트를 적절한 크기(청크)로 나누는 도구
+langchain-huggingface     # 허깅페이스 모델(임베딩 등) 연동 패키지
+chromadb                  # 벡터 데이터베이스 (임베딩 저장 및 유사도 검색)
+sentence-transformers     # 문장을 벡터로 변환하는 임베딩 모델 라이브러리

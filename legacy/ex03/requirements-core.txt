@@ -1,0 +1,14 @@
+# 1. Core Framework (웹 서버 및 기본 환경)
+fastapi                   # 최신 파이썬 웹 프레임워크 (고성능 API 서버 구축)
+uvicorn                   # ASGI 웹 서버 (FastAPI 실행을 위한 서버)
+jinja2                    # 템플릿 엔진 (HTML 렌더링용)
+python-dotenv             # 환경 변수 관리 (.env 파일 로딩)
+pydantic                  # 데이터 검증 및 설정 관리
+pydantic-settings         # Pydantic 기반 설정 관리 (BaseSettings 등)
+requests                  # HTTP 요청 라이브러리 (외부 API 호출용)
+python-multipart          # 폼 데이터 파싱 (파일 업로드 등 처리)
+
+# 2. Database & ORM (정형 데이터 관리)
+sqlalchemy                # SQL 툴킷 및 ORM (DB 추상화 및 쿼리 관리)
+psycopg2-binary           # PostgreSQL 데이터베이스 어댑터 (DB 연결 드라이버)
+pandas                    # 데이터 분석 및 조작 라이브러리 (엑셀/CSV 처리 등)

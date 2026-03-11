@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Phase 2 - 사내 시스템 확장 및 통합{% endblock %}
+{% block page_name %}Phase 2. 사내 시스템 확장 (Clone + MCP + RAG){% endblock %}
+
+{% block extra_css %}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.system-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-secondary);
+}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h3>📂 지식 인프라 현황</h3>
+    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">사내 시스템 클론 후 연결된 정형/비정형 데이터 소스입니다.</p>
+    
+    <div class="grid">
+        <div class="card" style="background: rgba(99, 102, 241, 0.05);">
+            <span class="system-icon">🗄️</span>
+            <h4>정형 데이터 (SQLite)</h4>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0;">직원 정보, 휴가 DB</p>
+            <div class="stat-value" style="color: {% if db_status == '활성화됨' %}var(--success){% else %}var(--warning){% endif %};">
+                company.db {{ db_status }}
+            </div>
+        </div>
+
+        <div class="card" style="background: rgba(6, 182, 212, 0.05); opacity: 0.6;">
+            <span class="system-icon">📄</span>
+            <h4>비정형 데이터 (RAG)</h4>
+            <p style="font-size: 0.9rem; margin: 0.5rem 0;">사내 규정, PDF 문서</p>
+            <div class="stat-value" style="font-size: 1rem;">Stage 3에서 진행 예정</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <h3>🔗 통합 지식 엔진 (Hybrid Architecture)</h3>
+    <div style="margin-top: 1rem; padding: 1rem; border: 1px dashed var(--border-color); border-radius: 0.5rem;">
+        <code style="color: var(--accent-primary);">
+            # Hybrid Retriever Flow<br>
+            1. User Query -> Semantic Search (VectorDB)<br>
+            2. User Query -> Tool Call (MCP/SQL)<br>
+            3. Synthesize Result -> LLM Answer
+        </code>
+    </div>
+</div>
+{% endblock %}

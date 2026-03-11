@@ -1,0 +1,5 @@
+# 4. Document Processing (문서 분석 및 변환)
+pdfplumber                # PDF 텍스트 및 표 추출 라이브러리 (정확도 높음)
+python-docx               # Word 문서(.docx) 읽기/쓰기 라이브러리
+openpyxl                  # Excel 파일(.xlsx) 읽기/쓰기 라이브러리
+easyocr                   # 이미지 내 텍스트 추출 (OCR) 라이브러리

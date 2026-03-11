@@ -1,0 +1,6 @@
+#!/Users/nomadlab/Desktop/김주혁/workspace/coding-study/ai-llm-rag/실습용/ai-assistant-project/venv/bin/python3.12
+import sys
+from isympy import main
+if __name__ == '__main__':
+    sys.argv[0] = sys.argv[0].removesuffix('.exe')
+    sys.exit(main())
